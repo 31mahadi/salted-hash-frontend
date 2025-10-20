@@ -1,0 +1,81 @@
+[
+  {
+    "id": "1",
+    "slug": "zero-trust-architecture-2025",
+    "title": "Zero Trust Architecture: The Future of Enterprise Security in 2025",
+    "excerpt": "Learn why zero trust is no longer optional and how to implement a robust zero trust security model in your organization.",
+    "content": "Zero Trust Architecture (ZTA) has evolved from a buzzword to a business imperative. In this comprehensive guide, we explore the core principles of zero trust—never trust, always verify—and provide a roadmap for implementing ZTA in modern enterprises. From identity-centric security to micro-segmentation, discover how zero trust eliminates implicit trust and reduces attack surfaces. We'll cover real-world case studies, common implementation challenges, and best practices for securing remote workforces, cloud environments, and hybrid infrastructures.",
+    "author": "Sarah Chen",
+    "publishedAt": "2025-10-15",
+    "readTime": "8 min read",
+    "category": "Security Strategy",
+    "image": "/images/blog/zero-trust.jpg",
+    "tags": ["Zero Trust", "Enterprise Security", "Cloud Security", "Identity Management"]
+  },
+  {
+    "id": "2",
+    "slug": "ai-powered-cyber-threats",
+    "title": "AI-Powered Cyber Threats: What You Need to Know",
+    "excerpt": "Artificial intelligence is revolutionizing both cyber defense and offense. Understand the emerging AI threat landscape.",
+    "content": "As artificial intelligence becomes more sophisticated, cybercriminals are leveraging AI and machine learning to launch more targeted, evasive, and automated attacks. From deepfake phishing campaigns to AI-generated malware variants, the threat landscape is evolving rapidly. This article examines the dual nature of AI in cybersecurity—how defenders use AI for threat detection while attackers weaponize it for social engineering and vulnerability discovery. We'll discuss defensive strategies, the importance of AI-driven security operations centers (SOCs), and how organizations can stay ahead of AI-enabled threats.",
+    "author": "Marcus Rodriguez",
+    "publishedAt": "2025-10-10",
+    "readTime": "10 min read",
+    "category": "Threat Intelligence",
+    "image": "/images/blog/ai-threats.jpg",
+    "tags": ["Artificial Intelligence", "Machine Learning", "Threat Intelligence", "Social Engineering"]
+  },
+  {
+    "id": "3",
+    "slug": "ransomware-defense-strategies",
+    "title": "Ransomware Defense: Building a Multi-Layered Protection Strategy",
+    "excerpt": "Ransomware attacks are on the rise. Learn how to build a resilient defense strategy that goes beyond backups.",
+    "content": "Ransomware remains one of the most devastating cyber threats facing organizations today. Traditional backup strategies are no longer sufficient as attackers now target backups and exfiltrate data before encryption. This in-depth guide covers the anatomy of modern ransomware attacks, from initial access to double extortion tactics. We provide a comprehensive defense framework including endpoint detection and response (EDR), network segmentation, privileged access management, and incident response planning. Additionally, we explore cyber insurance considerations, negotiation strategies, and recovery best practices.",
+    "author": "Elena Volkov",
+    "publishedAt": "2025-10-05",
+    "readTime": "12 min read",
+    "category": "Threat Prevention",
+    "image": "/images/blog/ransomware.jpg",
+    "tags": ["Ransomware", "Incident Response", "Backup Strategy", "Endpoint Security"]
+  },
+  {
+    "id": "4",
+    "slug": "cloud-security-best-practices",
+    "title": "Cloud Security Best Practices for AWS, Azure, and GCP",
+    "excerpt": "Master cloud security with actionable best practices for the three major cloud platforms.",
+    "content": "Cloud adoption accelerates business agility but introduces unique security challenges. This comprehensive guide compares security features across AWS, Azure, and Google Cloud Platform, covering identity and access management (IAM), encryption, network security, and compliance. We dive deep into common misconfigurations that lead to data breaches—such as public S3 buckets and overprivileged service accounts—and provide step-by-step remediation guidance. Learn how to implement defense-in-depth strategies, automate security monitoring with cloud-native tools, and maintain compliance across multi-cloud environments.",
+    "author": "David Park",
+    "publishedAt": "2025-09-28",
+    "readTime": "15 min read",
+    "category": "Cloud Security",
+    "image": "/images/blog/cloud-security.jpg",
+    "tags": ["AWS", "Azure", "GCP", "Cloud Security", "IAM", "Compliance"]
+  },
+  {
+    "id": "5",
+    "slug": "supply-chain-security-risks",
+    "title": "Supply Chain Security: Protecting Your Software Development Lifecycle",
+    "excerpt": "Supply chain attacks are becoming more sophisticated. Learn how to secure your SDLC from code to deployment.",
+    "content": "High-profile supply chain attacks like SolarWinds and Log4j have exposed the vulnerability of modern software ecosystems. This article explores the full spectrum of supply chain security risks, from compromised open-source libraries to malicious code injection in CI/CD pipelines. We provide a comprehensive framework for securing the software development lifecycle (SDLC), including dependency scanning, software bill of materials (SBOM) management, code signing, and secure build environments. Additionally, we discuss vendor risk management, third-party security assessments, and strategies for detecting and responding to supply chain compromises.",
+    "author": "Priya Sharma",
+    "publishedAt": "2025-09-20",
+    "readTime": "11 min read",
+    "category": "Application Security",
+    "image": "/images/blog/supply-chain.jpg",
+    "tags": ["Supply Chain Security", "SDLC", "DevSecOps", "Open Source", "Vulnerability Management"]
+  },
+  {
+    "id": "6",
+    "slug": "security-awareness-training",
+    "title": "The Human Firewall: Effective Security Awareness Training Programs",
+    "excerpt": "Technology alone can't stop social engineering. Build a security-conscious culture with effective training.",
+    "content": "Despite advanced security technologies, human error remains the weakest link in cybersecurity. Phishing, social engineering, and insider threats continue to compromise organizations worldwide. This guide presents evidence-based approaches to security awareness training that actually work. We move beyond checkbox compliance training to explore gamification, simulated phishing campaigns, role-based training modules, and continuous reinforcement strategies. Learn how to measure training effectiveness, create a security-first culture, and turn employees into active defenders rather than passive recipients of security policies.",
+    "author": "James O'Connor",
+    "publishedAt": "2025-09-15",
+    "readTime": "9 min read",
+    "category": "Security Awareness",
+    "image": "/images/blog/security-training.jpg",
+    "tags": ["Security Awareness", "Phishing", "Social Engineering", "Training", "Culture"]
+  }
+]
+
