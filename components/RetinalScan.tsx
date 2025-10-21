@@ -44,16 +44,16 @@ export default function RetinalScan() {
   }, []);
 
   return (
-    <div className="absolute bottom-[20%] right-[12%] opacity-40 pointer-events-none hidden lg:block">
+    <div className="absolute bottom-[15%] right-[8%] opacity-10 pointer-events-none hidden lg:block z-0">
       <motion.div
-        className="relative w-44 h-44 xl:w-52 xl:h-52"
+        className="relative w-28 h-28 xl:w-32 xl:h-32"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 2, duration: 1.5 }}
       >
         {/* Scanner Display */}
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-900/30 to-pink-800/30 backdrop-blur-sm rounded-lg border border-accent/20">
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent rounded-lg" />
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-900/15 to-pink-800/15 backdrop-blur-sm rounded-lg border border-accent/10">
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/2 via-transparent to-transparent rounded-lg" />
         </div>
 
         {/* ACTUAL EYE (Using Eye Icon) */}
@@ -61,14 +61,14 @@ export default function RetinalScan() {
           <div className="relative">
             {/* Large eye icon */}
             <Eye 
-              className="w-24 h-24 xl:w-28 xl:h-28 text-accent/70" 
+              className="w-14 h-14 xl:w-16 xl:h-16 text-accent/20" 
               strokeWidth={1}
             />
             
             {/* Detailed iris overlay */}
             <svg
               viewBox="0 0 100 100"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 xl:w-14 xl:h-14"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 xl:w-10 xl:h-10"
               fill="none"
             >
               {/* Iris rings */}
@@ -122,7 +122,7 @@ export default function RetinalScan() {
                     stroke="currentColor"
                     strokeWidth="0.3"
                     className="text-accent"
-                    opacity="0.25"
+                    opacity="0.15"
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: scanning ? 1 : 0 }}
                     transition={{ duration: 0.3, delay: 0.5 + i * 0.01 }}
@@ -167,7 +167,7 @@ export default function RetinalScan() {
             repeat: scanning ? Infinity : 0,
           }}
         >
-          <svg viewBox="0 0 100 100" className="w-32 h-32 xl:w-36 xl:h-36">
+          <svg viewBox="0 0 100 100" className="w-20 h-20 xl:w-24 xl:h-24">
             {/* Main reticle circle */}
             <circle
               cx="50"
@@ -178,7 +178,7 @@ export default function RetinalScan() {
               strokeWidth="0.5"
               className="text-accent"
               strokeDasharray="3 3"
-              opacity="0.6"
+              opacity="0.4"
             />
             <circle
               cx="50"
@@ -188,12 +188,12 @@ export default function RetinalScan() {
               stroke="currentColor"
               strokeWidth="0.3"
               className="text-accent"
-              opacity="0.4"
+              opacity="0.25"
             />
             
             {/* Crosshairs */}
-            <line x1="50" y1="0" x2="50" y2="100" stroke="currentColor" strokeWidth="0.3" className="text-accent" opacity="0.5" />
-            <line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" strokeWidth="0.3" className="text-accent" opacity="0.5" />
+            <line x1="50" y1="0" x2="50" y2="100" stroke="currentColor" strokeWidth="0.3" className="text-accent" opacity="0.3" />
+            <line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" strokeWidth="0.3" className="text-accent" opacity="0.3" />
             
             {/* Corner markers */}
             {[0, 90, 180, 270].map((rotation) => (
@@ -325,32 +325,32 @@ export default function RetinalScan() {
 
         {/* Status Display */}
         <motion.div
-          className="absolute -top-8 xl:-top-10 left-0 right-0 flex items-center justify-center gap-2"
+          className="absolute -top-6 xl:-top-8 left-0 right-0 flex items-center justify-center gap-1"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
           <motion.div
-            className="w-1.5 h-1.5 xl:w-2 xl:h-2 rounded-full bg-accent"
+            className="w-1 h-1 xl:w-1.5 xl:h-1.5 rounded-full bg-accent"
             animate={{
               opacity: scanning ? [1, 0.3, 1] : 0.5,
               scale: scanning ? [1, 1.4, 1] : 1,
               boxShadow: scanning 
-                ? ["0 0 5px rgba(236,72,153,0.5)", "0 0 15px rgba(236,72,153,1)", "0 0 5px rgba(236,72,153,0.5)"]
-                : "0 0 5px rgba(236,72,153,0.3)",
+                ? ["0 0 3px rgba(236,72,153,0.5)", "0 0 8px rgba(236,72,153,1)", "0 0 3px rgba(236,72,153,0.5)"]
+                : "0 0 3px rgba(236,72,153,0.3)",
             }}
             transition={{
               duration: 1,
               repeat: scanning ? Infinity : 0,
             }}
           />
-          <span className="text-[10px] xl:text-xs font-mono text-accent tracking-wider">
-            {scanning ? `IRIS MAPPING... ${progress}%` : "READY"}
+          <span className="text-[8px] xl:text-[10px] font-mono text-accent tracking-wider">
+            {scanning ? `IRIS ${progress}%` : "READY"}
           </span>
         </motion.div>
 
         {/* Results */}
         <motion.div
-          className="absolute -bottom-12 xl:-bottom-14 left-0 right-0 text-center"
+          className="absolute -bottom-10 xl:-bottom-12 left-0 right-0 text-center"
           initial={{ opacity: 0 }}
           animate={{
             opacity: scanning && progress >= 100 ? 1 : 0,
@@ -359,11 +359,11 @@ export default function RetinalScan() {
             duration: 0.3,
           }}
         >
-          <div className="bg-accent/10 backdrop-blur-sm border border-accent/30 rounded px-2 py-1.5 xl:px-3 xl:py-2 inline-block">
-            <div className="text-xs xl:text-sm font-mono text-accent font-bold">
-              ✓ RETINAL MATCH
+          <div className="bg-accent/5 backdrop-blur-sm border border-accent/20 rounded px-1 py-0.5 xl:px-2 xl:py-1 inline-block">
+            <div className="text-[8px] xl:text-[10px] font-mono text-accent font-bold">
+              ✓ MATCH
             </div>
-            <div className="text-[10px] xl:text-xs text-accent/70 mt-0.5">
+            <div className="text-[6px] xl:text-[8px] text-accent/70 mt-0.5">
               99.9% • 2048-BIT
             </div>
           </div>

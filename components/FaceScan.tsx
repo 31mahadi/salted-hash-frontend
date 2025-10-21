@@ -73,31 +73,31 @@ export default function FaceScan() {
   ];
 
   return (
-    <div className="absolute top-[18%] right-[10%] opacity-40 pointer-events-none hidden lg:block">
+    <div className="absolute top-[12%] right-[8%] opacity-10 pointer-events-none hidden lg:block z-0">
       <motion.div
-        className="relative w-48 h-56 xl:w-56 xl:h-64"
+        className="relative w-28 h-32 xl:w-32 xl:h-36"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.5, duration: 1.5 }}
       >
         {/* Scanner Display Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 to-purple-800/30 backdrop-blur-sm rounded-lg border border-purple/20">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple/5 via-transparent to-transparent rounded-lg" />
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/15 to-purple-800/15 backdrop-blur-sm rounded-lg border border-purple/10">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple/2 via-transparent to-transparent rounded-lg" />
         </div>
 
         {/* ACTUAL FACE SILHOUETTE (Using User Icon) */}
-        <div className="absolute inset-0 flex items-center justify-center pt-6 xl:pt-8">
+        <div className="absolute inset-0 flex items-center justify-center pt-4 xl:pt-5">
           <div className="relative">
             {/* Large face icon */}
             <User 
-              className="w-28 h-28 xl:w-32 xl:h-32 text-purple/70" 
+              className="w-16 h-16 xl:w-20 xl:h-20 text-purple/20" 
               strokeWidth={1}
             />
             
             {/* Face mesh overlay */}
             <svg
               viewBox="0 0 160 160"
-              className="absolute inset-0 w-28 h-28 xl:w-32 xl:h-32"
+              className="absolute inset-0 w-16 h-16 xl:w-20 xl:h-20"
               fill="none"
             >
               {/* Facial contour lines */}
@@ -109,7 +109,7 @@ export default function FaceScan() {
                 stroke="currentColor"
                 strokeWidth="0.5"
                 className="text-purple"
-                opacity="0.4"
+                opacity="0.6"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: scanning ? 1 : 0.3 }}
                 transition={{ duration: 1 }}
@@ -123,7 +123,7 @@ export default function FaceScan() {
                   stroke="currentColor"
                   strokeWidth="0.3"
                   className="text-purple"
-                  opacity="0.3"
+                  opacity="0.5"
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: scanning ? 1 : 0 }}
                   transition={{ duration: 0.5, delay: 0.5 + i * 0.05 }}
@@ -138,7 +138,7 @@ export default function FaceScan() {
                   stroke="currentColor"
                   strokeWidth="0.3"
                   className="text-purple"
-                  opacity="0.3"
+                  opacity="0.5"
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: scanning ? 1 : 0 }}
                   transition={{ duration: 0.5, delay: 0.7 + i * 0.05 }}
@@ -277,32 +277,32 @@ export default function FaceScan() {
 
         {/* Status Display */}
         <motion.div
-          className="absolute -top-10 xl:-top-12 left-0 right-0 flex items-center justify-center gap-2"
+          className="absolute -top-6 xl:-top-8 left-0 right-0 flex items-center justify-center gap-1"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
           <motion.div
-            className="w-1.5 h-1.5 xl:w-2 xl:h-2 rounded-full bg-purple"
+            className="w-1 h-1 xl:w-1.5 xl:h-1.5 rounded-full bg-purple"
             animate={{
               opacity: scanning ? [1, 0.3, 1] : 0.5,
               scale: scanning ? [1, 1.4, 1] : 1,
               boxShadow: scanning 
-                ? ["0 0 5px rgba(124,58,237,0.5)", "0 0 15px rgba(124,58,237,1)", "0 0 5px rgba(124,58,237,0.5)"]
-                : "0 0 5px rgba(124,58,237,0.3)",
+                ? ["0 0 3px rgba(124,58,237,0.5)", "0 0 8px rgba(124,58,237,1)", "0 0 3px rgba(124,58,237,0.5)"]
+                : "0 0 3px rgba(124,58,237,0.3)",
             }}
             transition={{
               duration: 1,
               repeat: scanning ? Infinity : 0,
             }}
           />
-          <span className="text-[10px] xl:text-xs font-mono text-purple tracking-wider">
-            {scanning ? `ANALYZING... ${detectedPoints}/12 POINTS` : "STANDBY"}
+          <span className="text-[8px] xl:text-[10px] font-mono text-purple tracking-wider">
+            {scanning ? `ANALYZE ${detectedPoints}/12` : "STANDBY"}
           </span>
         </motion.div>
 
         {/* Results Display */}
         <motion.div
-          className="absolute -bottom-14 xl:-bottom-16 left-0 right-0 text-center"
+          className="absolute -bottom-10 xl:-bottom-12 left-0 right-0 text-center"
           initial={{ opacity: 0 }}
           animate={{
             opacity: scanning && detectedPoints >= 12 ? 1 : 0,
@@ -311,12 +311,12 @@ export default function FaceScan() {
             duration: 0.3,
           }}
         >
-          <div className="bg-purple/10 backdrop-blur-sm border border-purple/30 rounded px-2 py-1.5 xl:px-3 xl:py-2 inline-block">
-            <div className="text-xs xl:text-sm font-mono text-purple font-bold">
-              ✓ IDENTITY VERIFIED
+          <div className="bg-purple/5 backdrop-blur-sm border border-purple/20 rounded px-1 py-0.5 xl:px-2 xl:py-1 inline-block">
+            <div className="text-[8px] xl:text-[10px] font-mono text-purple font-bold">
+              ✓ VERIFIED
             </div>
-            <div className="text-[10px] xl:text-xs text-purple/70 mt-0.5">
-              99.2% • 12 LANDMARKS
+            <div className="text-[6px] xl:text-[8px] text-purple/70 mt-0.5">
+              99.2% • 12 LAND
             </div>
           </div>
         </motion.div>

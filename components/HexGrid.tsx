@@ -26,7 +26,7 @@ export default function HexGrid() {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [hexagons.length]);
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">

@@ -7,6 +7,12 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   height: 100%;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* WebKit */
 }
 
 body {
@@ -14,6 +20,12 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* WebKit */
 }
 
 /* Full-screen page-by-page scrolling with no scrollbar */
@@ -23,20 +35,254 @@ body {
   overflow-x: hidden;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
+  scroll-padding-top: 0;
+  scroll-snap-stop: always;
+  scroll-snap-points-y: repeat(100vh); /* Ensure consistent snap points */
+  position: relative;
+  z-index: 1;
 }
 
 .snap-container::-webkit-scrollbar {
   display: none; /* WebKit */
+  width: 0;
+  height: 0;
 }
 
 /* Ensure proper spacing for navbar */
 .snap-container section {
   padding-top: 5rem; /* 80px - navbar height + extra spacing */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
 }
 
 /* Hero section specific adjustments */
 .snap-container section:first-child {
-  padding-top: 4rem; /* Slightly less padding for hero */
+  padding-top: 0; /* No padding for hero section */
+}
+
+/* Additional snap scrolling enhancements */
+.snap-container section:last-child {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  padding-top: 5rem; /* Ensure proper spacing for navbar */
+}
+
+/* Professional transition animations */
+.snap-container section {
+  opacity: 0.7;
+  transform: translateY(40px) scale(0.95);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: blur(2px);
+}
+
+/* First section (hero) and last section should be visible by default */
+.snap-container section:first-child,
+.snap-container section:last-child {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0px);
+}
+
+.snap-container section.snap-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0px);
+}
+
+/* Smooth entrance animations for section content */
+.snap-container section .container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+/* First section and last section content should be visible by default */
+.snap-container section:first-child .container,
+.snap-container section:last-child .container,
+.snap-container section:last-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.snap-container section.snap-active .container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced background transitions */
+.snap-container section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.snap-container section.snap-active::before {
+  opacity: 1;
+}
+
+/* Staggered animation for child elements */
+.snap-container section.snap-active .container > * {
+  animation: slideInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* First section and last section children should be visible by default */
+.snap-container section:first-child .container > *,
+.snap-container section:last-child .container > *,
+.snap-container section:last-child > * {
+  animation: none;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.snap-container section.snap-active .container > *:nth-child(1) { animation-delay: 0.2s; }
+.snap-container section.snap-active .container > *:nth-child(2) { animation-delay: 0.4s; }
+.snap-container section.snap-active .container > *:nth-child(3) { animation-delay: 0.6s; }
+.snap-container section.snap-active .container > *:nth-child(4) { animation-delay: 0.8s; }
+.snap-container section.snap-active .container > *:nth-child(5) { animation-delay: 1s; }
+.snap-container section.snap-active .container > *:nth-child(6) { animation-delay: 1.2s; }
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Text shimmer animation */
+@keyframes text-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Enhanced scroll indicator */
+.snap-container::after {
+  content: '';
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 200px;
+  background: linear-gradient(to bottom, 
+    rgba(0, 217, 255, 0.3) 0%, 
+    rgba(0, 217, 255, 0.1) 50%, 
+    rgba(0, 217, 255, 0.3) 100%
+  );
+  border-radius: 2px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.snap-container:hover::after {
+  opacity: 1;
+}
+
+/* Scroll progress indicator */
+.snap-container::before {
+  content: '';
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 60px;
+  background: linear-gradient(to bottom, 
+    rgba(0, 217, 255, 0.8) 0%, 
+    rgba(124, 58, 237, 0.8) 100%
+  );
+  border-radius: 2px;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1001;
+  animation: scrollProgress 2s ease-in-out infinite;
+}
+
+@keyframes scrollProgress {
+  0%, 100% {
+    transform: translateY(-50%) scaleY(0.3);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-50%) scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* Enhanced scroll behavior */
+.snap-container {
+  scroll-timeline: --scroll;
+  animation-timeline: --scroll;
+  scroll-padding-top: 0;
+  scroll-snap-stop: always;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* Ensure smooth scrolling on all devices */
+@media (prefers-reduced-motion: no-preference) {
+  .snap-container {
+    scroll-behavior: smooth;
+  }
+  
+  .snap-container section {
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .snap-container section .container {
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  .snap-container {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  .snap-container section {
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .snap-container section {
+    transition: none;
+    animation: none;
+  }
+  
+  .snap-container section .container {
+    transition: none;
+    animation: none;
+  }
 }
 
 @layer base {
@@ -66,22 +312,16 @@ body {
     scroll-behavior: smooth;
   }
 
-  /* Custom scrollbar */
+  /* Hide scrollbars globally for snap scrolling */
   ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    display: none;
+    width: 0;
+    height: 0;
   }
 
-  ::-webkit-scrollbar-track {
-    @apply bg-background;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-primary/30 rounded-full;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/50;
+  /* Firefox scrollbar hiding */
+  * {
+    scrollbar-width: none;
   }
 }
 

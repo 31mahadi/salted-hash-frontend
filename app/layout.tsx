@@ -39,7 +39,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <Navbar />
-        <main className="h-screen overflow-hidden">
+        <main>
           {children}
         </main>
         <Footer />

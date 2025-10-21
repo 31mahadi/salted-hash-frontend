@@ -23,8 +23,20 @@ export default async function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Get In Touch
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 relative">
+                <span 
+                  className="relative inline-block"
+                  style={{
+                    background: "linear-gradient(90deg, #00FFFF 0%, #8B5CF6 50%, #FF0080 100%)",
+                    backgroundSize: "200% auto",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    animation: "text-shimmer 3s linear infinite",
+                  }}
+                >
+                  Get In Touch
+                </span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/70">
                 Have questions about our services? Need a security assessment? 

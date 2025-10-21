@@ -34,30 +34,30 @@ export default function FingerprintScan() {
   }, []);
 
   return (
-    <div className="absolute top-[15%] left-[8%] opacity-40 pointer-events-none hidden lg:block">
+    <div className="absolute top-[10%] left-[5%] opacity-10 pointer-events-none hidden lg:block z-0">
       <motion.div
-        className="relative w-40 h-48 xl:w-48 xl:h-56"
+        className="relative w-24 h-28 xl:w-28 xl:h-32"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1, duration: 1.5 }}
       >
         {/* Scanner Pad Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/40 to-slate-800/40 backdrop-blur-sm rounded-lg border border-primary/20">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/20 to-slate-800/20 backdrop-blur-sm rounded-lg border border-primary/10">
           {/* Glass reflection effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent rounded-lg" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/2 via-transparent to-transparent rounded-lg" />
         </div>
 
         {/* ACTUAL FINGERPRINT (Large Icon as Print) */}
         <div className="absolute inset-0 flex items-center justify-center">
           <Fingerprint 
-            className="w-32 h-32 xl:w-36 xl:h-36 text-primary/60" 
+            className="w-16 h-16 xl:w-20 xl:h-20 text-primary/20" 
             strokeWidth={0.5}
           />
           
           {/* Additional fingerprint detail overlay */}
           <svg
             viewBox="0 0 200 200"
-            className="absolute w-32 h-32 xl:w-36 xl:h-36"
+            className="absolute w-16 h-16 xl:w-20 xl:h-20"
             fill="none"
             stroke="currentColor"
             strokeWidth="0.8"
@@ -239,32 +239,32 @@ export default function FingerprintScan() {
 
         {/* Status Indicator */}
         <motion.div
-          className="absolute -top-8 xl:-top-10 left-0 right-0 flex items-center justify-center gap-2"
+          className="absolute -top-6 xl:-top-8 left-0 right-0 flex items-center justify-center gap-1"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
           <motion.div
-            className="w-1.5 h-1.5 xl:w-2 xl:h-2 rounded-full bg-primary"
+            className="w-1 h-1 xl:w-1.5 xl:h-1.5 rounded-full bg-primary"
             animate={{
               opacity: scanning ? [1, 0.3, 1] : 0.5,
               scale: scanning ? [1, 1.3, 1] : 1,
               boxShadow: scanning 
-                ? ["0 0 5px rgba(0,217,255,0.5)", "0 0 15px rgba(0,217,255,1)", "0 0 5px rgba(0,217,255,0.5)"]
-                : "0 0 5px rgba(0,217,255,0.3)",
+                ? ["0 0 3px rgba(0,217,255,0.5)", "0 0 8px rgba(0,217,255,1)", "0 0 3px rgba(0,217,255,0.5)"]
+                : "0 0 3px rgba(0,217,255,0.3)",
             }}
             transition={{
               duration: 1,
               repeat: scanning ? Infinity : 0,
             }}
           />
-          <span className="text-[10px] xl:text-xs font-mono text-primary tracking-wider">
-            {scanning ? `SCANNING... ${progress}%` : "READY TO SCAN"}
+          <span className="text-[8px] xl:text-[10px] font-mono text-primary tracking-wider">
+            {scanning ? `SCAN ${progress}%` : "READY"}
           </span>
         </motion.div>
 
         {/* Results Display */}
         <motion.div
-          className="absolute -bottom-12 xl:-bottom-14 left-0 right-0 text-center"
+          className="absolute -bottom-10 xl:-bottom-12 left-0 right-0 text-center"
           initial={{ opacity: 0 }}
           animate={{
             opacity: scanning && progress >= 100 ? 1 : 0,
@@ -273,12 +273,12 @@ export default function FingerprintScan() {
             duration: 0.3,
           }}
         >
-          <div className="bg-primary/10 backdrop-blur-sm border border-primary/30 rounded px-2 py-1.5 xl:px-3 xl:py-2 inline-block">
-            <div className="text-xs xl:text-sm font-mono text-primary font-bold">
-              ✓ MATCH CONFIRMED
+          <div className="bg-primary/5 backdrop-blur-sm border border-primary/20 rounded px-1 py-0.5 xl:px-2 xl:py-1 inline-block">
+            <div className="text-[8px] xl:text-[10px] font-mono text-primary font-bold">
+              ✓ MATCH
             </div>
-            <div className="text-[10px] xl:text-xs text-primary/70 mt-0.5">
-              98.7% • 42 POINTS
+            <div className="text-[6px] xl:text-[8px] text-primary/70 mt-0.5">
+              98.7% • 42 PTS
             </div>
           </div>
         </motion.div>

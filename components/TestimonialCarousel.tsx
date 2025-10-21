@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
 import { Testimonial } from "@/types";
@@ -36,7 +36,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
     return Math.abs(offset) * velocity;
   };
 
-  const paginate = (newDirection: number) => {
+  const paginate = useCallback((newDirection: number) => {
     setDirection(newDirection);
     setCurrentIndex((prevIndex) => {
       let nextIndex = prevIndex + newDirection;
@@ -44,7 +44,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
       if (nextIndex >= testimonials.length) nextIndex = 0;
       return nextIndex;
     });
-  };
+  }, [testimonials.length]);
 
   // Auto-play carousel
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
       paginate(1);
     }, 5000);
     return () => clearInterval(timer);
-  }, [currentIndex]);
+  }, [currentIndex, paginate]);
 
   if (!testimonials || testimonials.length === 0) {
     return null;
@@ -100,7 +100,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
 
                 {/* Content */}
                 <p className="text-xl md:text-2xl text-foreground/90 mb-8 text-center italic leading-relaxed">
-                  "{testimonials[currentIndex].content}"
+                  &ldquo;{testimonials[currentIndex].content}&rdquo;
                 </p>
 
                 {/* Author */}
