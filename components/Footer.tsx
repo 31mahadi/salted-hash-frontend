@@ -1,5 +1,16 @@
+"use client";
+
 import Link from "next/link";
-import { Shield, Mail, Phone, MapPin, Twitter, Linkedin, Github } from "lucide-react";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Twitter, Linkedin, Github } from "lucide-react";
+import { LogoFooter } from "@/components/Logo";
+import { 
+  COMPANY_EMAIL, 
+  COMPANY_PHONE_DISPLAY, 
+  COMPANY_PHONE_TEL, 
+  COMPANY_ADDRESS,
+  SOCIAL_LINKS 
+} from "@/lib/constants";
 
 const footerLinks = {
   services: [
@@ -23,7 +34,17 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-t from-card/70 via-card/80 to-card/90 backdrop-blur-xl border-border/50 relative z-10">
+    <motion.footer 
+      className="bg-gradient-to-t from-card/70 via-card/80 to-card/90 backdrop-blur-xl border-border/50 relative z-10"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ 
+        duration: 0.8, 
+        ease: "easeOut",
+        delay: 0.2
+      }}
+    >
       {/* Grid Background */}
       <div 
         className="absolute inset-0 cyber-grid opacity-40"
@@ -40,25 +61,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-purple/20 border border-primary/30 flex items-center justify-center group-hover:scale-105 transition-transform">
-                <Shield className="h-6 w-6 text-primary" />
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                CyberArmor
-              </span>
-            </Link>
+            <div className="mb-4">
+              <LogoFooter />
+            </div>
             <p className="text-foreground/70 mb-6 max-w-sm leading-relaxed">
               Fortify Your Digital Frontier. Empowering organizations with cutting-edge cybersecurity solutions.
             </p>
             <div className="flex gap-4">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/70 hover:text-primary hover:bg-primary/20 transition-all">
+              <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/70 hover:text-primary hover:bg-primary/20 transition-all">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/70 hover:text-primary hover:bg-primary/20 transition-all">
+              <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/70 hover:text-primary hover:bg-primary/20 transition-all">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/70 hover:text-primary hover:bg-primary/20 transition-all">
+              <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/70 hover:text-primary hover:bg-primary/20 transition-all">
                 <Github className="h-5 w-5" />
               </a>
             </div>
@@ -116,8 +132,8 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-foreground">Email</p>
-                <a href="mailto:contact@cyberarmor.com" className="text-sm text-foreground/70 hover:text-primary transition-colors">
-                  contact@cyberarmor.com
+                <a href={`mailto:${COMPANY_EMAIL}`} className="text-sm text-foreground/70 hover:text-primary transition-colors">
+                  {COMPANY_EMAIL}
                 </a>
               </div>
             </div>
@@ -127,8 +143,8 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-foreground">Phone</p>
-                <a href="tel:+18002923726" className="text-sm text-foreground/70 hover:text-primary transition-colors">
-                  +1 (800) CYBER-ARM
+                <a href={`tel:${COMPANY_PHONE_TEL}`} className="text-sm text-foreground/70 hover:text-primary transition-colors">
+                  {COMPANY_PHONE_DISPLAY}
                 </a>
               </div>
             </div>
@@ -139,7 +155,7 @@ export default function Footer() {
               <div>
                 <p className="text-sm font-semibold text-foreground">Address</p>
                 <p className="text-sm text-foreground/70">
-                  123 Security Boulevard<br />San Francisco, CA 94102
+                  {COMPANY_ADDRESS.full}
                 </p>
               </div>
             </div>
@@ -147,11 +163,11 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="text-center text-sm text-foreground/60 pt-4 border-t border-border/30">
-            <p>&copy; {new Date().getFullYear()} CyberArmor. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} SaltedHash. All rights reserved.</p>
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
 

@@ -134,6 +134,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
         description="Our team can help you implement the strategies discussed in this article."
         primaryButtonText="Contact Security Experts"
         primaryButtonHref="/contact"
+        variant="card"
       />
     </>
   );

@@ -70,6 +70,7 @@ export default async function ServicesPage() {
         description="Our security experts are here to help. Get a free consultation to discuss your specific needs."
         primaryButtonText="Schedule Consultation"
         primaryButtonHref="/contact"
+        variant="background"
       />
     </>
   );

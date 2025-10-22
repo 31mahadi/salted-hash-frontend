@@ -1,8 +1,15 @@
 import { Metadata } from "next";
+import { 
+  COMPANY_NAME, 
+  COMPANY_EMAIL, 
+  COMPANY_PHONE_DISPLAY, 
+  COMPANY_ADDRESS,
+  SOCIAL_LINKS 
+} from "./constants";
 import { SEOMetadata } from "@/types";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://cyberarmor.com";
-const companyName = "CyberArmor";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://saltedhash.com";
+const companyName = COMPANY_NAME;
 
 export function generateSEO({
   title,
@@ -41,7 +48,7 @@ export function generateSEO({
       title: fullTitle,
       description,
       images: [fullImage],
-      creator: "@cyberarmor",
+      creator: "@saltedhash",
     },
     robots: {
       index: true,
@@ -98,18 +105,22 @@ export function generateOrganizationSchema() {
     description: "Fortify Your Digital Frontier",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "San Francisco",
-      addressRegion: "CA",
+      streetAddress: COMPANY_ADDRESS.street,
+      addressLocality: COMPANY_ADDRESS.city,
+      addressRegion: COMPANY_ADDRESS.state,
+      postalCode: COMPANY_ADDRESS.zip,
       addressCountry: "US",
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-800-CYBER-ARM",
+      telephone: COMPANY_PHONE_DISPLAY,
       contactType: "customer service",
+      email: COMPANY_EMAIL,
     },
     sameAs: [
-      "https://twitter.com/cyberarmor",
-      "https://linkedin.com/company/cyberarmor",
+      SOCIAL_LINKS.twitter,
+      SOCIAL_LINKS.linkedin,
+      SOCIAL_LINKS.github,
     ],
   });
 }

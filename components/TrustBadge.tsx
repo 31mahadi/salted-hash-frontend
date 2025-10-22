@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, Check } from "lucide-react";
+import { Check } from "lucide-react";
 
 interface TrustBadgeProps {
   icon: React.ReactNode;

@@ -7,9 +7,9 @@ import { generateSEO } from "@/lib/seo";
 import { Handshake, Lock, Award, Lightbulb } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
-  title: "About CyberArmor",
-  description: "Learn about CyberArmor's mission, vision, and values. Meet our expert team of cybersecurity professionals.",
-  keywords: ["about cyberarmor", "cybersecurity company", "security team", "mission"],
+  title: "About SaltedHash",
+  description: "Learn about SaltedHash's mission, vision, and values. Meet our expert team of cybersecurity professionals.",
+  keywords: ["about saltedhash", "cybersecurity company", "security team", "mission"],
   url: "/about",
 });
 
@@ -42,7 +42,7 @@ export default async function AboutPage() {
                     animation: "text-shimmer 3s linear infinite",
                   }}
                 >
-                  About CyberArmor
+                  About SaltedHash
                 </span>
               </h1>
               <p className="text-xl text-primary font-semibold mb-4">
@@ -157,7 +157,7 @@ export default async function AboutPage() {
           <AnimatedSection className="mb-12">
             <SectionTitle
               title="Leadership Team"
-              subtitle="Meet the experts behind CyberArmor"
+              subtitle="Meet the experts behind SaltedHash"
               centered
             />
           </AnimatedSection>
@@ -184,7 +184,8 @@ export default async function AboutPage() {
       {/* CTA */}
       <CTASection
         title="Ready to work with us?"
-        description="Join hundreds of organizations that trust CyberArmor to protect their digital assets."
+        description="Join hundreds of organizations that trust SaltedHash to protect their digital assets."
+        variant="background"
       />
     </>
   );

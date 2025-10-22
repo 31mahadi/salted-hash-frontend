@@ -6,7 +6,7 @@ import { generateSEO } from "@/lib/seo";
 
 export const metadata: Metadata = generateSEO({
   title: "Terms of Service",
-  description: "CyberArmor's terms of service and user agreement.",
+  description: "SaltedHash's terms of service and user agreement.",
   url: "/terms-of-service",
 });
 

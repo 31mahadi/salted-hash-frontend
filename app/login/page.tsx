@@ -4,10 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Shield, Mail, Lock, AlertCircle, CheckCircle } from "lucide-react";
+import { Mail, Lock, AlertCircle, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Logo from "@/components/Logo";
 import { loginUser } from "@/lib/api.client";
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/motion";
 
@@ -87,9 +88,9 @@ export default function LoginPage() {
           {/* Logo & Title */}
           <motion.div variants={staggerItem} className="text-center mb-8">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <Shield className="h-10 w-10 text-primary" />
+              <Logo size="md" showText={false} />
               <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                CyberArmor
+                SaltedHash
               </span>
             </Link>
             <h1 className="text-3xl font-bold mb-2">Welcome Back</h1>

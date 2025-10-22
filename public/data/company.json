@@ -1,9 +1,9 @@
 {
-  "name": "CyberArmor",
+  "name": "SaltedHash",
   "tagline": "Fortify Your Digital Frontier",
   "mission": "Empower organizations to defend against evolving digital threats with precision, innovation, and trust.",
   "vision": "A world where cybersecurity is seamless, strong, and smart — for every business, everywhere.",
-  "story": "Founded in 2018 by a team of former government cybersecurity specialists and ethical hackers, CyberArmor was born from a simple observation: traditional security approaches were failing to keep pace with modern threats. We set out to build a company that combines cutting-edge technology with human expertise to deliver security solutions that are both powerful and practical. Today, we protect hundreds of organizations worldwide, from startups to Fortune 500 companies, across industries including healthcare, finance, technology, and critical infrastructure.",
+  "story": "Founded in 2018 by a team of former government cybersecurity specialists and ethical hackers, SaltedHash was born from a simple observation: traditional security approaches were failing to keep pace with modern threats. We set out to build a company that combines cutting-edge technology with human expertise to deliver security solutions that are both powerful and practical. Today, we protect hundreds of organizations worldwide, from startups to Fortune 500 companies, across industries including healthcare, finance, technology, and critical infrastructure.",
   "values": [
     {
       "title": "Trust",
@@ -27,8 +27,8 @@
     }
   ],
   "contact": {
-    "email": "contact@cyberarmor.com",
-    "phone": "+1 (800) CYBER-ARM",
+    "email": "contact@saltedhash.com",
+    "phone": "+1 (800) SALT-HASH",
     "address": "123 Security Boulevard, Suite 500, San Francisco, CA 94102"
   },
   "team": [
@@ -69,7 +69,7 @@
     {
       "year": "2018",
       "title": "Company Founded",
-      "description": "CyberArmor established by security veterans with a mission to revolutionize enterprise cybersecurity."
+      "description": "SaltedHash established by security veterans with a mission to revolutionize enterprise cybersecurity."
     },
     {
       "year": "2019",

@@ -6,7 +6,7 @@ import { generateSEO } from "@/lib/seo";
 
 export const metadata: Metadata = generateSEO({
   title: "Privacy Policy",
-  description: "CyberArmor's privacy policy and data protection practices.",
+  description: "SaltedHash's privacy policy and data protection practices.",
   url: "/privacy-policy",
 });
 

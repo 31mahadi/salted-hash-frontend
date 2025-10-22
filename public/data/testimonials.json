@@ -4,7 +4,7 @@
     "name": "Michael Thompson",
     "role": "CISO",
     "company": "TechCorp Industries",
-    "content": "CyberArmor transformed our security posture. Their penetration testing revealed critical vulnerabilities we didn't know existed, and their team worked with us every step of the way to remediate them. Professional, thorough, and trustworthy.",
+    "content": "SaltedHash transformed our security posture. Their penetration testing revealed critical vulnerabilities we didn't know existed, and their team worked with us every step of the way to remediate them. Professional, thorough, and trustworthy.",
     "avatar": "/images/testimonials/michael.jpg",
     "rating": 5
   },
@@ -13,7 +13,7 @@
     "name": "Sarah Williams",
     "role": "VP of Engineering",
     "company": "HealthTech Solutions",
-    "content": "Achieving HIPAA compliance seemed daunting until we partnered with CyberArmor. Their compliance team guided us through every requirement, helped us implement necessary controls, and prepared us for a successful audit. Highly recommended.",
+    "content": "Achieving HIPAA compliance seemed daunting until we partnered with SaltedHash. Their compliance team guided us through every requirement, helped us implement necessary controls, and prepared us for a successful audit. Highly recommended.",
     "avatar": "/images/testimonials/sarah.jpg",
     "rating": 5
   },
@@ -22,7 +22,7 @@
     "name": "David Park",
     "role": "CTO",
     "company": "FinSecure Bank",
-    "content": "After experiencing a security incident, we engaged CyberArmor for incident response. Their 24/7 response team contained the breach within hours, conducted a thorough forensic investigation, and helped us implement controls to prevent future incidents. Exceptional service when we needed it most.",
+    "content": "After experiencing a security incident, we engaged SaltedHash for incident response. Their 24/7 response team contained the breach within hours, conducted a thorough forensic investigation, and helped us implement controls to prevent future incidents. Exceptional service when we needed it most.",
     "avatar": "/images/testimonials/david.jpg",
     "rating": 5
   },
@@ -31,7 +31,7 @@
     "name": "Jennifer Martinez",
     "role": "Head of IT",
     "company": "Global Retail Co",
-    "content": "CyberArmor's cloud security audit was comprehensive and insightful. They identified misconfigurations across our AWS environment that could have led to significant data exposure. Their recommendations were practical and easy to implement.",
+    "content": "SaltedHash's cloud security audit was comprehensive and insightful. They identified misconfigurations across our AWS environment that could have led to significant data exposure. Their recommendations were practical and easy to implement.",
     "avatar": "/images/testimonials/jennifer.jpg",
     "rating": 5
   },
@@ -40,7 +40,7 @@
     "name": "Robert Chen",
     "role": "Security Director",
     "company": "Manufacturing Plus",
-    "content": "We've worked with several security firms, but CyberArmor stands out for their technical depth and clear communication. Their risk assessment gave our board the visibility they needed, and the remediation roadmap was spot-on.",
+    "content": "We've worked with several security firms, but SaltedHash stands out for their technical depth and clear communication. Their risk assessment gave our board the visibility they needed, and the remediation roadmap was spot-on.",
     "avatar": "/images/testimonials/robert.jpg",
     "rating": 5
   },
@@ -49,7 +49,7 @@
     "name": "Emily Johnson",
     "role": "CEO",
     "company": "StartupHub",
-    "content": "As a startup preparing for SOC 2 certification, we needed expert guidance. CyberArmor not only helped us achieve certification on the first try but also built security practices that scaled with our growth. Fantastic partner.",
+    "content": "As a startup preparing for SOC 2 certification, we needed expert guidance. SaltedHash not only helped us achieve certification on the first try but also built security practices that scaled with our growth. Fantastic partner.",
     "avatar": "/images/testimonials/emily.jpg",
     "rating": 5
   }

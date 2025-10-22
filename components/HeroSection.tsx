@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Shield, Lock, Zap, Check } from "lucide-react";
+import { ArrowRight, Lock, Zap, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Logo from "@/components/Logo";
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/motion";
 import CyberBackground from "./CyberBackground";
 import TrustBadge from "./TrustBadge";
@@ -25,7 +26,7 @@ export default function HeroSection() {
           {/* Badge */}
           <motion.div variants={staggerItem} className="mb-8">
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-primary/10 via-purple/10 to-accent/10 border border-primary/30 backdrop-blur-sm">
-              <Shield className="h-4 w-4 text-primary animate-pulse" />
+              <Logo size="sm" showText={false} />
               <span className="text-sm font-semibold bg-gradient-to-r from-primary via-purple to-accent bg-clip-text text-transparent">
                 Enterprise Cybersecurity Excellence
               </span>
@@ -126,7 +127,7 @@ export default function HeroSection() {
             ].map((item, index) => (
               <TrustBadge
                 key={item.text}
-                icon={<Shield className="h-4 w-4" />}
+                icon={<Logo size="sm" showText={false} />}
                 text={item.text}
                 index={index}
               />

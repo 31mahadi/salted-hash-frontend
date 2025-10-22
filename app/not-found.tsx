@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Shield, Home, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -24,8 +26,8 @@ export default function NotFound() {
 
           {/* Description */}
           <p className="text-lg text-foreground/70 mb-8">
-            The page you're looking for doesn't exist or has been moved. 
-            Let's get you back to safety.
+            The page you&apos;re looking for doesn&apos;t exist or has been moved. 
+            Let&apos;s get you back to safety.
           </p>
 
           {/* Action Buttons */}

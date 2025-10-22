@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Shield } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Logo from "@/components/Logo";
 import { fadeInUp } from "@/lib/motion";
 
 interface CTASectionProps {
@@ -13,6 +14,7 @@ interface CTASectionProps {
   primaryButtonHref?: string;
   secondaryButtonText?: string;
   secondaryButtonHref?: string;
+  variant?: "default" | "card" | "background";
 }
 
 export default function CTASection({
@@ -22,13 +24,26 @@ export default function CTASection({
   primaryButtonHref = "/contact",
   secondaryButtonText = "View Services",
   secondaryButtonHref = "/services",
+  variant = "default",
 }: CTASectionProps) {
   return (
-    <section className="w-full h-full relative overflow-hidden flex items-center">
+    <section className={`w-full h-full relative overflow-hidden flex items-center ${
+      variant === "card" ? "bg-card py-20" : 
+      variant === "background" ? "bg-background py-20" : 
+      "bg-gradient-to-br from-background via-background to-primary/5"
+    }`}>
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10" />
+      <div className={`absolute inset-0 ${
+        variant === "card" ? "bg-gradient-to-br from-card/50 via-transparent to-primary/5" :
+        variant === "background" ? "bg-gradient-to-br from-background/50 via-transparent to-primary/5" :
+        "bg-gradient-to-br from-primary/10 via-transparent to-secondary/10"
+      }`} />
       <motion.div
-        className="absolute inset-0 opacity-30"
+        className={`absolute inset-0 ${
+          variant === "card" ? "opacity-20" :
+          variant === "background" ? "opacity-20" :
+          "opacity-30"
+        }`}
         style={{
           backgroundImage: `
             linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
@@ -56,9 +71,7 @@ export default function CTASection({
         >
           {/* Icon */}
           <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
-              <Shield className="h-8 w-8 text-primary" />
-            </div>
+            <Logo size="lg" showText={false} />
           </div>
 
           {/* Content */}

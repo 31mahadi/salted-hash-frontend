@@ -5,10 +5,18 @@ import AnimatedSection from "@/components/AnimatedSection";
 import ContactForm from "@/components/ContactForm";
 import { getCompanyInfo } from "@/lib/api";
 import { generateSEO } from "@/lib/seo";
+import { 
+  COMPANY_EMAIL, 
+  COMPANY_PHONE_DISPLAY, 
+  COMPANY_PHONE_TEL, 
+  COMPANY_ADDRESS,
+  BUSINESS_HOURS,
+  EMERGENCY_CONTACT 
+} from "@/lib/constants";
 
 export const metadata: Metadata = generateSEO({
   title: "Contact Us",
-  description: "Get in touch with CyberArmor's security experts. Schedule a free consultation or request a risk assessment.",
+  description: "Get in touch with SaltedHash's security experts. Schedule a free consultation or request a risk assessment.",
   keywords: ["contact", "cybersecurity consultation", "security assessment"],
   url: "/contact",
 });
@@ -73,10 +81,10 @@ export default async function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
                       <a
-                        href={`mailto:${company.contact.email}`}
+                        href={`mailto:${COMPANY_EMAIL}`}
                         className="text-foreground/70 hover:text-primary transition-colors"
                       >
-                        {company.contact.email}
+                        {COMPANY_EMAIL}
                       </a>
                     </div>
                   </div>
@@ -89,10 +97,10 @@ export default async function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1">Phone</h3>
                       <a
-                        href={`tel:${company.contact.phone}`}
+                        href={`tel:${COMPANY_PHONE_TEL}`}
                         className="text-foreground/70 hover:text-primary transition-colors"
                       >
-                        {company.contact.phone}
+                        {COMPANY_PHONE_DISPLAY}
                       </a>
                     </div>
                   </div>
@@ -104,7 +112,7 @@ export default async function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Office</h3>
-                      <p className="text-foreground/70">{company.contact.address}</p>
+                      <p className="text-foreground/70">{COMPANY_ADDRESS.full}</p>
                     </div>
                   </div>
 
@@ -116,8 +124,8 @@ export default async function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1">Business Hours</h3>
                       <p className="text-foreground/70">
-                        Monday - Friday: 9:00 AM - 6:00 PM PST<br />
-                        24/7 Emergency Response Available
+                        {BUSINESS_HOURS.weekdays}<br />
+                        {BUSINESS_HOURS.emergency}
                       </p>
                     </div>
                   </div>
@@ -127,14 +135,14 @@ export default async function ContactPage() {
                 <div className="mt-8 p-6 rounded-lg bg-primary/10 border border-primary/20">
                   <h3 className="font-semibold mb-2 text-primary">Security Emergency?</h3>
                   <p className="text-sm text-foreground/70 mb-3">
-                    For urgent security incidents, our incident response team is available 24/7/365.
+                    {EMERGENCY_CONTACT.description}
                   </p>
                   <a
-                    href="tel:+18002927376"
+                    href={`tel:${EMERGENCY_CONTACT.phone}`}
                     className="inline-flex items-center gap-2 text-primary font-semibold hover:text-secondary transition-colors"
                   >
                     <Phone className="h-4 w-4" />
-                    Call Emergency Hotline
+                    {EMERGENCY_CONTACT.display}
                   </a>
                 </div>
               </div>

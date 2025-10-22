@@ -8,7 +8,7 @@ import { generateSEO } from "@/lib/seo";
 
 export const metadata: Metadata = generateSEO({
   title: "Cybersecurity Blog",
-  description: "Stay informed with the latest cybersecurity insights, threat intelligence, and security best practices from CyberArmor experts.",
+  description: "Stay informed with the latest cybersecurity insights, threat intelligence, and security best practices from SaltedHash experts.",
   keywords: [
     "cybersecurity blog",
     "security news",
@@ -72,6 +72,7 @@ export default async function BlogPage() {
         description="Subscribe to our newsletter for exclusive content, webinars, and early access to security reports."
         primaryButtonText="Contact Us"
         primaryButtonHref="/contact"
+        variant="card"
       />
     </>
   );

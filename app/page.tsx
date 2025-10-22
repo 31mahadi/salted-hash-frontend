@@ -13,7 +13,8 @@ import ScrollSnapObserver from "@/components/ScrollSnapObserver";
 import Footer from "@/components/Footer";
 import { useSmoothScroll } from "@/lib/useSmoothScroll";
 import { getServices, getTestimonials } from "@/lib/api.client";
-import { ArrowRight, Shield } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Logo from "@/components/Logo";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -47,7 +48,7 @@ export default function HomePage() {
 
   const features = [
     {
-      icon: "shield" as const,
+      icon: "award" as const,
       title: "Trust",
       description: "Industry-leading security experts with proven track record protecting Fortune 500 companies.",
     },
@@ -136,7 +137,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
           <AnimatedSection className="mb-16">
             <SectionTitle
-              title="Why Choose CyberArmor"
+              title="Why Choose SaltedHash"
               subtitle="Trusted by industry leaders for mission-critical security"
               centered
             />
@@ -175,78 +176,85 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA and Footer Section */}
-      <section className="snap-start h-screen flex flex-col bg-gradient-to-b from-background via-background to-card/70 relative overflow-hidden">
+      {/* CTA Section */}
+      <section className="snap-start h-screen flex items-center justify-center bg-gradient-to-b from-background via-background to-card/70 relative">
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple/5 rounded-full blur-3xl" />
         </div>
         
-        {/* CTA Section */}
-        <div className="flex-1 flex items-center relative z-10">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="max-w-4xl mx-auto text-center">
-              {/* Enhanced Icon */}
-              <div className="flex justify-center mb-8">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-purple/20 border border-primary/30 flex items-center justify-center backdrop-blur-sm">
-                  <Shield className="h-10 w-10 text-primary" />
-                </div>
-              </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Enhanced Icon */}
+            <div className="flex justify-center mb-8">
+              <Logo size="xl" showText={false} />
+            </div>
 
-              {/* Enhanced Content */}
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 relative">
-                <span 
-                  className="relative inline-block"
-                  style={{
-                    background: "linear-gradient(90deg, #00FFFF 0%, #8B5CF6 50%, #FF0080 100%)",
-                    backgroundSize: "200% auto",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    animation: "text-shimmer 3s linear infinite",
-                  }}
-                >
-                  Ready to strengthen your cyber defenses?
-                </span>
-                <motion.div
-                  className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-purple/20 blur-2xl -z-10"
-                  animate={{
-                    opacity: [0.5, 0.8, 0.5],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
-              </h2>
-              <p className="text-xl md:text-2xl text-foreground/70 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Let's secure your future together. Get a free consultation and risk assessment.
-              </p>
+            {/* Enhanced Content */}
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 relative">
+              <span 
+                className="relative inline-block"
+                style={{
+                  background: "linear-gradient(90deg, #00FFFF 0%, #8B5CF6 50%, #FF0080 100%)",
+                  backgroundSize: "200% auto",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  animation: "text-shimmer 3s linear infinite",
+                }}
+              >
+                Ready to strengthen your cyber defenses?
+              </span>
+              <motion.div
+                className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-purple/20 blur-2xl -z-10"
+                animate={{
+                  opacity: [0.5, 0.8, 0.5],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            </h2>
+            <p className="text-xl md:text-2xl text-foreground/70 mb-10 max-w-3xl mx-auto leading-relaxed">
+              Let's secure your future together. Get a free consultation and risk assessment.
+            </p>
 
-              {/* Enhanced Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <Link href="/contact">
-                  <Button size="lg" className="group px-8 py-4 text-lg font-semibold">
-                    Get Started
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-                <Link href="/services">
-                  <Button size="lg" variant="outline" className="px-8 py-4 text-lg font-semibold">
-                    View Services
-                  </Button>
-                </Link>
-              </div>
+            {/* Enhanced Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Link href="/contact">
+                <Button size="lg" className="group px-8 py-4 text-lg font-semibold">
+                  Get Started
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+              <Link href="/services">
+                <Button size="lg" variant="outline" className="px-8 py-4 text-lg font-semibold">
+                  View Services
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
-        
-        {/* Footer */}
-        <div className="w-full relative z-10">
+      </section>
+
+      {/* Footer Section */}
+      <section className="snap-start h-screen flex items-end justify-center bg-gradient-to-b from-card/70 via-card/80 to-card/90 relative">
+        <motion.div 
+          className="w-full relative z-10"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ 
+            duration: 0.8, 
+            ease: "easeOut",
+            delay: 0.2
+          }}
+        >
           <Footer />
-        </div>
+        </motion.div>
       </section>
     </div>
   );

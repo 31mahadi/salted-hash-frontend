@@ -133,6 +133,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
         description="Contact our security experts to discuss how we can help protect your organization."
         primaryButtonText="Contact Us"
         primaryButtonHref="/contact"
+        variant="background"
       />
     </>
   );
