@@ -34,7 +34,7 @@ export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
       whileHover={{ y: -12 }}
       className="group"
     >
-      <Card className="h-full relative overflow-hidden backdrop-blur-md bg-card-glass border border-primary/10 hover:border-primary/40 transition-all duration-700 hover:shadow-[0_0_50px_rgba(0,217,255,0.25),inset_0_0_30px_rgba(124,58,237,0.1)] hover:scale-[1.02]">
+      <Card className="h-full relative overflow-hidden backdrop-blur-md bg-card-glass border border-primary/10 hover:border-primary/40 transition-all duration-700 hover:shadow-[0_0_50px_rgba(0,217,255,0.25),inset_0_0_30px_rgba(124,58,237,0.1)] hover:scale-[1.02] text-center">
         {/* Shimmer Effect */}
         <motion.div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
@@ -57,7 +57,7 @@ export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
         
         <CardHeader className="relative z-10">
           <motion.div 
-            className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 via-purple/10 to-accent/5 flex items-center justify-center mb-5 relative overflow-hidden group-hover:scale-105 transition-all duration-500 border border-primary/20"
+            className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 via-purple/10 to-accent/5 flex items-center justify-center mb-5 relative overflow-hidden group-hover:scale-105 transition-all duration-500 border border-primary/20 mx-auto"
             whileHover={{ 
               boxShadow: "0 0 30px rgba(0,217,255,0.4), inset 0 0 20px rgba(124,58,237,0.2)",
             }}

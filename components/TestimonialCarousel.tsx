@@ -60,7 +60,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
 
   return (
     <div className="relative max-w-6xl mx-auto w-full">
-      <div className="relative h-[500px] flex items-center justify-center">
+      <div className="relative h-[400px] md:h-[500px] flex items-center justify-center">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={currentIndex}
@@ -87,26 +87,26 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
             }}
             className="absolute w-full"
           >
-            <div className="bg-card border border-border rounded-lg p-8 md:p-12 relative w-full max-w-4xl mx-auto">
-              <Quote className="absolute top-8 left-8 h-12 w-12 text-primary/20" />
+            <div className="bg-card border border-border rounded-lg p-6 md:p-8 lg:p-12 relative w-full max-w-4xl mx-auto">
+              <Quote className="absolute top-4 md:top-6 lg:top-8 left-4 md:left-6 lg:left-8 h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-primary/20" />
               
               <div className="relative z-10">
                 {/* Rating */}
                 <div className="flex gap-1 mb-4 justify-center">
                   {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                    <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 fill-primary text-primary" />
                   ))}
                 </div>
 
                 {/* Content */}
-                <p className="text-xl md:text-2xl text-foreground/90 mb-8 text-center italic leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-foreground/90 mb-4 md:mb-6 lg:mb-8 text-center italic leading-relaxed px-4">
                   &ldquo;{testimonials[currentIndex].content}&rdquo;
                 </p>
 
                 {/* Author */}
-                <div className="text-center">
-                  <p className="font-semibold text-xl">{testimonials[currentIndex].name}</p>
-                  <p className="text-foreground/70 text-lg">
+                <div className="text-center px-4">
+                  <p className="font-semibold text-sm sm:text-base md:text-lg lg:text-xl">{testimonials[currentIndex].name}</p>
+                  <p className="text-foreground/70 text-xs sm:text-sm md:text-base lg:text-lg">
                     {testimonials[currentIndex].role} at {testimonials[currentIndex].company}
                   </p>
                 </div>
@@ -116,8 +116,8 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
         </AnimatePresence>
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="flex justify-center gap-4 mt-8">
+      {/* Navigation Buttons - Hidden on Mobile */}
+      <div className="hidden md:flex justify-center gap-4 mt-8">
         <Button
           variant="outline"
           size="icon"
@@ -136,8 +136,8 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
         </Button>
       </div>
 
-      {/* Dots Indicator */}
-      <div className="flex justify-center gap-2 mt-6">
+      {/* Dots Indicator - Hidden on Mobile */}
+      <div className="hidden md:flex justify-center gap-2 mt-4 md:mt-6">
         {testimonials.map((_, index) => (
           <button
             key={index}

@@ -57,17 +57,17 @@ export default function Footer() {
         }}
       />
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 text-center md:text-left">
             <div className="mb-4">
               <LogoFooter />
             </div>
-            <p className="text-foreground/70 mb-6 max-w-sm leading-relaxed">
+            <p className="text-foreground/70 mb-6 max-w-sm leading-relaxed mx-auto md:mx-0">
               Fortify Your Digital Frontier. Empowering organizations with cutting-edge cybersecurity solutions.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center md:justify-start">
               <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/70 hover:text-primary hover:bg-primary/20 transition-all">
                 <Twitter className="h-5 w-5" />
               </a>

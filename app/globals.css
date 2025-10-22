@@ -9,6 +9,7 @@ html {
   height: 100%;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
+  -webkit-text-size-adjust: 100%; /* Prevent iOS text size adjust */
 }
 
 html::-webkit-scrollbar {
@@ -390,6 +391,59 @@ body::-webkit-scrollbar {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 768px) {
+    /* Disable snap scrolling on mobile */
+    .snap-container {
+      scroll-snap-type: none !important;
+      overflow-y: auto !important;
+      height: auto !important;
+    }
+    
+    .snap-container section {
+      scroll-snap-align: none !important;
+      height: auto !important;
+    }
+    
+    /* Improve touch targets */
+    button, a, input, textarea, select {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Better spacing on mobile */
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    /* Reduce complex animations on mobile for better performance */
+    .perspective-1000 {
+      perspective: none;
+    }
+    
+    /* Improve text readability */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Ensure proper scrolling on mobile */
+    html, body {
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: auto;
+    }
+  }
+
+  /* Tablet-specific improvements */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
   }
 }

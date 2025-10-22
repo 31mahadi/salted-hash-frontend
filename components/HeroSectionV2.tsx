@@ -82,28 +82,28 @@ export default function HeroSectionV2() {
           className="max-w-5xl mx-auto text-center"
         >
           {/* Badge with Entrance */}
-          <motion.div variants={itemVariants} className="mb-10">
+          <motion.div variants={itemVariants} className="mb-6 md:mb-10">
             <motion.div
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-primary/5 via-purple/5 to-accent/5 border border-primary/20 backdrop-blur-xl"
+              className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full bg-gradient-to-r from-primary/5 via-purple/5 to-accent/5 border border-primary/20 backdrop-blur-xl"
               whileHover={{ scale: 1.05, borderColor: "rgba(0,217,255,0.4)" }}
             >
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               >
-                <Shield className="h-4 w-4 text-primary" />
+                <Shield className="h-3 w-3 md:h-4 md:w-4 text-primary" />
               </motion.div>
-              <span className="text-sm font-semibold bg-gradient-to-r from-primary via-purple to-accent bg-clip-text text-transparent">
+              <span className="text-xs md:text-sm font-semibold bg-gradient-to-r from-primary via-purple to-accent bg-clip-text text-transparent">
                 Enterprise Cybersecurity Excellence
               </span>
-              <Zap className="h-4 w-4 text-accent" />
+              <Zap className="h-3 w-3 md:h-4 md:w-4 text-accent" />
             </motion.div>
           </motion.div>
 
           {/* Main Headline with Light Sweep */}
           <motion.h1
             variants={itemVariants}
-            className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black mb-8 leading-[0.9] relative"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black mb-6 md:mb-8 leading-[0.9] relative px-4"
           >
             <motion.span className="block">Fortify Your</motion.span>
             <motion.span
@@ -146,7 +146,7 @@ export default function HeroSectionV2() {
           {/* Subheadline with Blur Reveal */}
           <motion.p
             variants={itemVariants}
-            className="text-xl md:text-2xl text-foreground/70 mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+            className="text-lg md:text-xl lg:text-2xl text-foreground/70 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-light px-4"
           >
             Enterprise-grade cybersecurity that{" "}
             <motion.span
@@ -164,20 +164,20 @@ export default function HeroSectionV2() {
           {/* CTA Buttons with Magnetic Effect */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-8 md:mb-12 px-4"
           >
             <Link href="/contact">
-              <MagneticButton className="group bg-gradient-to-r from-primary to-purple hover:from-primary/90 hover:to-purple/90 text-black font-bold px-10 py-7 text-lg border-0">
+              <MagneticButton className="group bg-gradient-to-r from-primary to-purple hover:from-primary/90 hover:to-purple/90 text-black font-bold px-6 md:px-10 py-4 md:py-7 text-base md:text-lg border-0 w-full sm:w-auto">
                 Get a Free Assessment
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-2" />
+                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-2" />
               </MagneticButton>
             </Link>
             <Link href="/services">
               <MagneticButton
                 variant="outline"
-                className="border-2 border-primary hover:bg-primary/10 backdrop-blur-sm px-10 py-7 text-lg font-semibold"
+                className="border-2 border-primary hover:bg-primary/10 backdrop-blur-sm px-6 md:px-10 py-4 md:py-7 text-base md:text-lg font-semibold w-full sm:w-auto"
               >
-                <Lock className="mr-2 h-5 w-5" />
+                <Lock className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                 Explore Services
               </MagneticButton>
             </Link>

@@ -27,7 +27,7 @@ export default function FeatureCard({ icon, title, description, index }: Feature
       viewport={{ once: true }}
       transition={{ delay: index * 0.15, duration: 0.6 }}
     >
-      <div className="h-full p-8 rounded-2xl bg-gradient-to-br from-card-glass to-transparent border border-primary/10 backdrop-blur-md relative overflow-hidden group-hover:border-primary/30 transition-all duration-700 group-hover:shadow-[0_0_40px_rgba(0,217,255,0.15)]">
+      <div className="h-full p-6 md:p-8 rounded-2xl bg-gradient-to-br from-card-glass to-transparent border border-primary/10 backdrop-blur-md relative overflow-hidden group-hover:border-primary/30 transition-all duration-700 group-hover:shadow-[0_0_40px_rgba(0,217,255,0.15)] max-w-sm mx-auto">
         {/* Corner Accents */}
         <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="absolute bottom-0 left-0 w-12 h-12 border-b border-l border-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

@@ -26,11 +26,11 @@ export default async function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-background via-background to-primary/5">
+      <section className="py-16 md:py-20 lg:py-32 bg-gradient-to-br from-background via-background to-primary/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 relative">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 relative px-4">
                 <span 
                   className="relative inline-block"
                   style={{

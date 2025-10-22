@@ -63,7 +63,7 @@ export default function ServiceCardV2({ service, index = 0 }: ServiceCardV2Props
       }}
       className="group perspective-1000"
     >
-      <Card className="h-full relative overflow-hidden backdrop-blur-md bg-card-glass border border-primary/10 hover:border-primary/40 transition-all duration-700 hover:shadow-[0_0_60px_rgba(0,217,255,0.3),inset_0_0_40px_rgba(124,58,237,0.15)]">
+      <Card className="h-full relative overflow-hidden backdrop-blur-md bg-card-glass border border-primary/10 hover:border-primary/40 transition-all duration-700 hover:shadow-[0_0_60px_rgba(0,217,255,0.3),inset_0_0_40px_rgba(124,58,237,0.15)] max-w-sm mx-auto text-center">
         {/* Spotlight Effect */}
         <motion.div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
@@ -91,7 +91,7 @@ export default function ServiceCardV2({ service, index = 0 }: ServiceCardV2Props
           <CardHeader>
             {/* Icon with 3D Effect */}
             <motion.div
-              className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/10 via-purple/10 to-accent/5 flex items-center justify-center mb-6 relative overflow-hidden border border-primary/20"
+              className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/10 via-purple/10 to-accent/5 flex items-center justify-center mb-6 relative overflow-hidden border border-primary/20 mx-auto"
               whileHover={{
                 scale: 1.1,
                 boxShadow: "0 0 40px rgba(0,217,255,0.5), inset 0 0 30px rgba(124,58,237,0.3)",
