@@ -31,14 +31,14 @@ export default function TermsOfServicePage() {
                 <section>
                   <h2 className="text-2xl font-bold mb-4">1. Acceptance of Terms</h2>
                   <p className="text-foreground/80 leading-relaxed">
-                    By accessing or using CyberArmor's services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+                    By accessing or using CyberArmor&apos;s services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
                   </p>
                 </section>
 
                 <section>
                   <h2 className="text-2xl font-bold mb-4">2. Services Description</h2>
                   <p className="text-foreground/80 leading-relaxed">
-                    CyberArmor provides cybersecurity assessment, penetration testing, compliance consulting, and incident response services. Our services are provided "as is" and are subject to availability.
+                    CyberArmor provides cybersecurity assessment, penetration testing, compliance consulting, and incident response services. Our services are provided &quot;as is&quot; and are subject to availability.
                   </p>
                 </section>
 
