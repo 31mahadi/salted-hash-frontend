@@ -73,7 +73,7 @@ export const validateCompanyConfig = () => {
   ];
   
   const missing = required.filter(field => {
-    const value = field.split('.').reduce((obj, key) => obj?.[key], COMPANY_CONFIG);
+    const value = field.split('.').reduce((obj: any, key: string) => obj?.[key], COMPANY_CONFIG as any);
     return !value;
   });
   
