@@ -51,7 +51,11 @@ export default function RegisterPage() {
     }
 
     try {
-      const success = await registerUser(formData.email, formData.password, formData.name);
+      const success = await registerUser({
+        email: formData.email,
+        password: formData.password,
+        name: formData.name
+      });
       
       if (success) {
         setSuccess(true);
