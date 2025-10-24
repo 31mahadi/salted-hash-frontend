@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -41,20 +42,36 @@ export function ThemeToggle() {
       variant="outline"
       size="sm"
       onClick={toggleTheme}
-      className="relative overflow-hidden"
+      className="relative overflow-hidden transition-all duration-300 hover:scale-105"
     >
       <div className="flex items-center gap-2">
-        {theme === 'dark' ? (
-          <>
-            <Sun className="h-4 w-4" />
-            <span>Light</span>
-          </>
-        ) : (
-          <>
-            <Moon className="h-4 w-4" />
-            <span>Dark</span>
-          </>
-        )}
+        <AnimatePresence mode="wait">
+          {theme === 'dark' ? (
+            <motion.div
+              key="light"
+              initial={{ opacity: 0, rotate: -90, scale: 0.8 }}
+              animate={{ opacity: 1, rotate: 0, scale: 1 }}
+              exit={{ opacity: 0, rotate: 90, scale: 0.8 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="flex items-center gap-2"
+            >
+              <Sun className="h-4 w-4" />
+              <span>Light</span>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="dark"
+              initial={{ opacity: 0, rotate: -90, scale: 0.8 }}
+              animate={{ opacity: 1, rotate: 0, scale: 1 }}
+              exit={{ opacity: 0, rotate: 90, scale: 0.8 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="flex items-center gap-2"
+            >
+              <Moon className="h-4 w-4" />
+              <span>Dark</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </Button>
   );

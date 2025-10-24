@@ -45,7 +45,7 @@ export default function CyberBackground() {
 
       {/* Grid Pattern - Theme Aware */}
       <motion.div
-        className="absolute inset-0 opacity-20 dark:opacity-20"
+        className="absolute inset-0 opacity-40 dark:opacity-30"
         style={{
           backgroundImage: `
             linear-gradient(var(--color-primary-DEFAULT) 1px, transparent 1px),

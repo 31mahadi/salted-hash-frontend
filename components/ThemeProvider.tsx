@@ -33,6 +33,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const cssVars = getThemeCSSVariables(theme);
     const root = document.documentElement;
     
+    // Add transition class for smooth theme switching
+    root.classList.add('theme-transition');
+    
     // Apply CSS variables
     Object.entries(cssVars).forEach(([property, value]) => {
       root.style.setProperty(property, value);
@@ -44,6 +47,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     // Save to localStorage
     localStorage.setItem('theme', theme);
+
+    // Remove transition class after animation completes
+    const timeout = setTimeout(() => {
+      root.classList.remove('theme-transition');
+    }, 300);
+
+    return () => clearTimeout(timeout);
   }, [theme, mounted]);
 
   const currentTheme = THEMES[theme];
