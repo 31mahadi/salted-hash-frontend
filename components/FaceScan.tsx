@@ -73,7 +73,7 @@ export default function FaceScan() {
   ];
 
   return (
-    <div className="absolute top-[12%] right-[8%] opacity-5 dark:opacity-10 pointer-events-none hidden lg:block z-0">
+    <div className="absolute top-[12%] right-[8%] opacity-2 dark:opacity-4 pointer-events-none hidden lg:block z-0">
       <motion.div
         className="relative w-28 h-32 xl:w-32 xl:h-36"
         initial={{ opacity: 0, scale: 0.8 }}
