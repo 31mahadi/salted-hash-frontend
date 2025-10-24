@@ -14,16 +14,30 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark');
+  const [theme, setTheme] = useState<Theme>(() => {
+    // Initialize from localStorage or default to dark
+    if (typeof window !== 'undefined') {
+      return (localStorage.getItem('theme') as Theme) || 'dark';
+    }
+    return 'dark';
+  });
 
   // Apply theme CSS variables to document
   useEffect(() => {
-    const cssVars = getThemeCSSVariables();
+    const cssVars = getThemeCSSVariables(theme);
     const root = document.documentElement;
     
+    // Apply CSS variables
     Object.entries(cssVars).forEach(([property, value]) => {
       root.style.setProperty(property, value);
     });
+
+    // Update Tailwind classes
+    root.classList.remove('light', 'dark');
+    root.classList.add(theme);
+
+    // Save to localStorage
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const currentTheme = THEMES[theme];

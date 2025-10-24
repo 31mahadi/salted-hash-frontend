@@ -116,8 +116,8 @@ export const THEMES = {
 export const getCurrentTheme = () => THEMES[CURRENT_THEME];
 
 // Get theme-specific CSS variables
-export const getThemeCSSVariables = () => {
-  const theme = getCurrentTheme();
+export const getThemeCSSVariables = (themeName: Theme = CURRENT_THEME) => {
+  const theme = THEMES[themeName];
   const cssVars: Record<string, string> = {};
   
   // Flatten nested color object

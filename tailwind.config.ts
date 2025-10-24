@@ -1,7 +1,4 @@
 import type { Config } from "tailwindcss";
-import { getCurrentTheme } from "./lib/theme-config";
-
-const currentTheme = getCurrentTheme();
 
 const config: Config = {
   darkMode: ["class"],
@@ -13,16 +10,41 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: currentTheme.colors.background,
-        foreground: currentTheme.colors.foreground,
-        primary: currentTheme.colors.primary,
-        secondary: currentTheme.colors.secondary,
-        accent: currentTheme.colors.accent,
-        card: currentTheme.colors.card,
-        border: currentTheme.colors.border,
-        input: currentTheme.colors.input,
-        ring: currentTheme.colors.ring,
-        purple: currentTheme.colors.purple,
+        background: "var(--color-background)",
+        foreground: "var(--color-foreground)",
+        primary: {
+          DEFAULT: "var(--color-primary-DEFAULT)",
+          foreground: "var(--color-primary-foreground)",
+          glow: "var(--color-primary-glow)",
+          light: "var(--color-primary-light)",
+          dark: "var(--color-primary-dark)",
+        },
+        secondary: {
+          DEFAULT: "var(--color-secondary-DEFAULT)",
+          foreground: "var(--color-secondary-foreground)",
+          glow: "var(--color-secondary-glow)",
+          light: "var(--color-secondary-light)",
+          dark: "var(--color-secondary-dark)",
+        },
+        accent: {
+          DEFAULT: "var(--color-accent-DEFAULT)",
+          foreground: "var(--color-accent-foreground)",
+          light: "var(--color-accent-light)",
+          dark: "var(--color-accent-dark)",
+        },
+        card: {
+          DEFAULT: "var(--color-card-DEFAULT)",
+          foreground: "var(--color-card-foreground)",
+          glass: "var(--color-card-glass)",
+        },
+        border: "var(--color-border)",
+        input: "var(--color-input)",
+        ring: "var(--color-ring)",
+        purple: {
+          DEFAULT: "var(--color-purple-DEFAULT)",
+          dark: "var(--color-purple-dark)",
+          light: "var(--color-purple-light)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -40,10 +62,10 @@ const config: Config = {
         },
         "glow-pulse": {
           "0%, 100%": { 
-            boxShadow: currentTheme.shadows.glow,
+            boxShadow: "var(--shadow-glow)",
           },
           "50%": { 
-            boxShadow: currentTheme.shadows.glow.replace('0.3', '0.6').replace('0.1', '0.3'),
+            boxShadow: "0 0 20px rgba(0, 255, 255, 0.6), 0 0 40px rgba(139, 92, 246, 0.3)",
           },
         },
         "float": {
