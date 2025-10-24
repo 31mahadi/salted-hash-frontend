@@ -11,7 +11,7 @@ import TrustBadge from "./TrustBadge";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero shadow-hero">
       {/* Cyber Background */}
       <CyberBackground />
 
@@ -25,9 +25,9 @@ export default function HeroSection() {
         >
           {/* Badge */}
           <motion.div variants={staggerItem} className="mb-8">
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-primary/10 via-purple/10 to-accent/10 border border-primary/30 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-card/80 backdrop-blur-md border border-primary/30 shadow-card">
               <Logo size="sm" showText={false} />
-              <span className="text-sm font-semibold bg-gradient-to-r from-primary via-purple to-accent bg-clip-text text-transparent">
+              <span className="text-sm font-semibold bg-gradient-primary bg-clip-text text-transparent">
                 Enterprise Cybersecurity Excellence
               </span>
               <Zap className="h-4 w-4 text-accent animate-pulse" />
@@ -42,21 +42,17 @@ export default function HeroSection() {
             <span className="relative inline-block">
               Fortify Your{" "}
               <span 
-                className="relative inline-block"
+                className="relative inline-block bg-gradient-primary bg-clip-text text-transparent"
                 style={{
-                  background: "linear-gradient(90deg, #00FFFF 0%, #8B5CF6 50%, #FF0080 100%)",
                   backgroundSize: "200% auto",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  animation: "text-shimmer 3s linear infinite",
+                  animation: "text-shimmer 3s ease-in-out infinite",
                 }}
               >
                 Digital Frontier
               </span>
             </span>
             <motion.div
-              className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-purple/20 blur-2xl -z-10"
+              className="absolute -inset-1 bg-gradient-primary opacity-20 blur-2xl -z-10"
               animate={{
                 opacity: [0.5, 0.8, 0.5],
               }}
@@ -88,14 +84,14 @@ export default function HeroSection() {
             <Link href="/contact">
               <Button 
                 size="lg" 
-                className="group relative overflow-hidden bg-gradient-to-r from-primary to-purple hover:from-primary/90 hover:to-purple/90 text-black font-bold px-8 py-6 text-lg"
+                className="group relative overflow-hidden bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold px-8 py-6 text-lg shadow-button"
               >
                 <span className="relative z-10 flex items-center">
                   Get a Free Assessment
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-2" />
                 </span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-purple to-accent"
+                  className="absolute inset-0 bg-gradient-secondary"
                   initial={{ x: "100%" }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}
@@ -106,7 +102,7 @@ export default function HeroSection() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-primary hover:bg-primary/10 backdrop-blur-sm px-8 py-6 text-lg font-semibold group"
+                className="border-2 border-primary hover:bg-primary/10 backdrop-blur-sm px-8 py-6 text-lg font-semibold group shadow-card"
               >
                 <Lock className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
                 Explore Services
