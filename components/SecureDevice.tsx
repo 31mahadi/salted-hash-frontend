@@ -19,7 +19,7 @@ export default function SecureDevice() {
   }, []);
 
   return (
-    <div className="absolute bottom-[25%] left-[10%] opacity-30 pointer-events-none hidden lg:block">
+    <div className="absolute bottom-[25%] left-[10%] opacity-5 dark:opacity-15 pointer-events-none hidden lg:block">
       <motion.div
         className="relative w-44 h-44 xl:w-52 xl:h-52"
         initial={{ opacity: 0, y: 20 }}

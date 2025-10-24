@@ -44,7 +44,7 @@ export default function RetinalScan() {
   }, []);
 
   return (
-    <div className="absolute bottom-[15%] right-[8%] opacity-10 pointer-events-none hidden lg:block z-0">
+    <div className="absolute bottom-[15%] right-[8%] opacity-5 dark:opacity-10 pointer-events-none hidden lg:block z-0">
       <motion.div
         className="relative w-28 h-28 xl:w-32 xl:h-32"
         initial={{ opacity: 0, scale: 0.8 }}

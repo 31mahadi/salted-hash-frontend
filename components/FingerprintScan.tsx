@@ -34,7 +34,7 @@ export default function FingerprintScan() {
   }, []);
 
   return (
-    <div className="absolute top-[10%] left-[5%] opacity-10 pointer-events-none hidden lg:block z-0">
+    <div className="absolute top-[10%] left-[5%] opacity-5 dark:opacity-10 pointer-events-none hidden lg:block z-0">
       <motion.div
         className="relative w-24 h-28 xl:w-28 xl:h-32"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -42,15 +42,15 @@ export default function FingerprintScan() {
         transition={{ delay: 1, duration: 1.5 }}
       >
         {/* Scanner Pad Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/20 to-slate-800/20 backdrop-blur-sm rounded-lg border border-primary/10">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/5 to-slate-800/5 backdrop-blur-sm rounded-lg border border-primary/5">
           {/* Glass reflection effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/2 via-transparent to-transparent rounded-lg" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/1 via-transparent to-transparent rounded-lg" />
         </div>
 
         {/* ACTUAL FINGERPRINT (Large Icon as Print) */}
         <div className="absolute inset-0 flex items-center justify-center">
           <Fingerprint 
-            className="w-16 h-16 xl:w-20 xl:h-20 text-primary/20" 
+            className="w-16 h-16 xl:w-20 xl:h-20 text-primary/10" 
             strokeWidth={0.5}
           />
           
@@ -73,7 +73,7 @@ export default function FingerprintScan() {
                   rx={offset * 0.7}
                   ry={offset}
                   className="text-primary"
-                  opacity={0.3 - i * 0.025}
+                  opacity={0.15 - i * 0.012}
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: scanning ? 1 : 0.5 }}
                   transition={{ duration: 0.5, delay: i * 0.05 }}
@@ -95,18 +95,18 @@ export default function FingerprintScan() {
           }}
         >
           <div 
-            className="h-2"
+            className="h-1"
             style={{
-              background: "linear-gradient(to bottom, transparent, rgba(0,217,255,0.1), #00D9FF, rgba(0,217,255,0.1), transparent)",
-              boxShadow: "0 0 30px 5px rgba(0,217,255,0.8), 0 0 60px 10px rgba(0,217,255,0.4)",
+              background: "linear-gradient(to bottom, transparent, rgba(0,217,255,0.05), var(--color-primary-DEFAULT), rgba(0,217,255,0.05), transparent)",
+              boxShadow: "0 0 15px 2px rgba(0,217,255,0.3), 0 0 30px 5px rgba(0,217,255,0.15)",
               filter: "blur(1px)",
             }}
           />
           {/* Scan line reflection */}
           <div 
-            className="h-1 mt-1"
+            className="h-0.5 mt-0.5"
             style={{
-              background: "linear-gradient(to bottom, transparent, rgba(0,217,255,0.3), transparent)",
+              background: "linear-gradient(to bottom, transparent, rgba(0,217,255,0.15), transparent)",
               filter: "blur(2px)",
             }}
           />
@@ -126,7 +126,7 @@ export default function FingerprintScan() {
         )}
 
         {/* Precision Grid Overlay */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-5 dark:opacity-10">
           {/* Vertical lines */}
           {[...Array(9)].map((_, i) => (
             <div
