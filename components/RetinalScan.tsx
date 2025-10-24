@@ -52,7 +52,7 @@ export default function RetinalScan() {
         transition={{ delay: 2, duration: 1.5 }}
       >
         {/* Scanner Display */}
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-900/15 to-pink-800/15 backdrop-blur-sm rounded-lg border border-accent/10">
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-900/15 to-pink-800/15 backdrop-blur-sm rounded-lg border border-accent/5">
           <div className="absolute inset-0 bg-gradient-to-br from-accent/2 via-transparent to-transparent rounded-lg" />
         </div>
 
@@ -308,7 +308,7 @@ export default function RetinalScan() {
         </div>
 
         {/* Scanner Frame */}
-        <div className="absolute inset-0 border-2 border-accent/30 rounded-lg">
+        <div className="absolute inset-0 border-2 border-accent/15 rounded-lg">
           {/* L-bracket corners */}
           {[
             { top: 0, left: 0 },

@@ -81,7 +81,7 @@ export default function FaceScan() {
         transition={{ delay: 1.5, duration: 1.5 }}
       >
         {/* Scanner Display Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/15 to-purple-800/15 backdrop-blur-sm rounded-lg border border-purple/10">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/15 to-purple-800/15 backdrop-blur-sm rounded-lg border border-purple/5">
           <div className="absolute inset-0 bg-gradient-to-br from-purple/2 via-transparent to-transparent rounded-lg" />
         </div>
 
@@ -259,7 +259,7 @@ export default function FaceScan() {
         </div>
 
         {/* Scanner Frame */}
-        <div className="absolute inset-0 border-2 border-purple/30 rounded-lg">
+        <div className="absolute inset-0 border-2 border-purple/15 rounded-lg">
           {/* Enhanced corner brackets */}
           {[
             { top: 0, left: 0 },
