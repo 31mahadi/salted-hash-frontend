@@ -1,11 +1,15 @@
 export interface Service {
   id: string;
+  category: string;
   slug: string;
   title: string;
   shortDescription: string;
   longDescription: string;
+  services: {
+    name: string;
+    description: string;
+  }[];
   benefits: string[];
-  useCases: string[];
   image: string;
   icon: string;
 }
@@ -49,6 +53,7 @@ export interface CompanyInfo {
   mission: string;
   vision: string;
   story: string;
+  expertise: string[];
   values: {
     title: string;
     description: string;
