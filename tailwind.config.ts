@@ -1,4 +1,7 @@
 import type { Config } from "tailwindcss";
+import { getCurrentTheme } from "./lib/theme-config";
+
+const currentTheme = getCurrentTheme();
 
 const config: Config = {
   darkMode: ["class"],
@@ -10,41 +13,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#050A14",
-        foreground: "#E2E8F0",
-        primary: {
-          DEFAULT: "#00D9FF",
-          foreground: "#050A14",
-          glow: "#00D9FF",
-          light: "#33E3FF",
-          dark: "#0099CC",
-        },
-        secondary: {
-          DEFAULT: "#7C3AED",
-          foreground: "#050A14",
-          glow: "#7C3AED",
-          light: "#A78BFA",
-          dark: "#5B21B6",
-        },
-        accent: {
-          DEFAULT: "#EC4899",
-          foreground: "#050A14",
-          light: "#F472B6",
-          dark: "#BE185D",
-        },
-        card: {
-          DEFAULT: "rgba(15, 23, 42, 0.7)",
-          foreground: "#E2E8F0",
-          glass: "rgba(15, 23, 42, 0.4)",
-        },
-        border: "rgba(0, 217, 255, 0.15)",
-        input: "rgba(15, 23, 42, 0.9)",
-        ring: "#00D9FF",
-        purple: {
-          DEFAULT: "#7C3AED",
-          dark: "#5B21B6",
-          light: "#A78BFA",
-        },
+        background: currentTheme.colors.background,
+        foreground: currentTheme.colors.foreground,
+        primary: currentTheme.colors.primary,
+        secondary: currentTheme.colors.secondary,
+        accent: currentTheme.colors.accent,
+        card: currentTheme.colors.card,
+        border: currentTheme.colors.border,
+        input: currentTheme.colors.input,
+        ring: currentTheme.colors.ring,
+        purple: currentTheme.colors.purple,
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -62,10 +40,10 @@ const config: Config = {
         },
         "glow-pulse": {
           "0%, 100%": { 
-            boxShadow: "0 0 20px rgba(0, 255, 255, 0.4), 0 0 40px rgba(0, 255, 255, 0.2)",
+            boxShadow: currentTheme.shadows.glow,
           },
           "50%": { 
-            boxShadow: "0 0 30px rgba(0, 255, 255, 0.6), 0 0 60px rgba(0, 255, 255, 0.3)",
+            boxShadow: currentTheme.shadows.glow.replace('0.3', '0.6').replace('0.1', '0.3'),
           },
         },
         "float": {

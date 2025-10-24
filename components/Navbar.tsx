@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { LogoNavbar } from "@/components/Logo";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -52,6 +53,7 @@ export default function Navbar() {
                 </Link>
               );
             })}
+            <ThemeToggle />
             <Link href="/login">
               <Button variant="outline" size="sm">
                 Login
@@ -99,11 +101,14 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
-                <Button variant="outline" className="w-full">
-                  Login
-                </Button>
-              </Link>
+              <div className="flex gap-2">
+                <ThemeToggle />
+                <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="outline" className="flex-1">
+                    Login
+                  </Button>
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}
