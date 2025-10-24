@@ -73,7 +73,7 @@ export default function FaceScan() {
   ];
 
   return (
-    <div className="absolute top-[12%] right-[8%] opacity-2 dark:opacity-4 pointer-events-none hidden lg:block z-0">
+    <div className="absolute top-[12%] right-[8%] opacity-1 dark:opacity-2 pointer-events-none hidden lg:block z-0">
       <motion.div
         className="relative w-28 h-32 xl:w-32 xl:h-36"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -81,7 +81,7 @@ export default function FaceScan() {
         transition={{ delay: 1.5, duration: 1.5 }}
       >
         {/* Scanner Display Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/15 to-purple-800/15 backdrop-blur-sm rounded-lg border border-purple/2">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/15 to-purple-800/15 backdrop-blur-sm rounded-lg border border-purple/0.8">
           <div className="absolute inset-0 bg-gradient-to-br from-purple/2 via-transparent to-transparent rounded-lg" />
         </div>
 
@@ -259,7 +259,7 @@ export default function FaceScan() {
         </div>
 
         {/* Scanner Frame */}
-        <div className="absolute inset-0 border-2 border-purple/8 rounded-lg">
+        <div className="absolute inset-0 border-2 border-purple/3 rounded-lg">
           {/* Enhanced corner brackets */}
           {[
             { top: 0, left: 0 },

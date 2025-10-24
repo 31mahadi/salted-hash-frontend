@@ -44,7 +44,7 @@ export default function RetinalScan() {
   }, []);
 
   return (
-    <div className="absolute bottom-[15%] right-[8%] opacity-2 dark:opacity-4 pointer-events-none hidden lg:block z-0">
+    <div className="absolute bottom-[15%] right-[8%] opacity-1 dark:opacity-2 pointer-events-none hidden lg:block z-0">
       <motion.div
         className="relative w-28 h-28 xl:w-32 xl:h-32"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -52,7 +52,7 @@ export default function RetinalScan() {
         transition={{ delay: 2, duration: 1.5 }}
       >
         {/* Scanner Display */}
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-900/15 to-pink-800/15 backdrop-blur-sm rounded-lg border border-accent/2">
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-900/15 to-pink-800/15 backdrop-blur-sm rounded-lg border border-accent/0.8">
           <div className="absolute inset-0 bg-gradient-to-br from-accent/2 via-transparent to-transparent rounded-lg" />
         </div>
 
@@ -308,7 +308,7 @@ export default function RetinalScan() {
         </div>
 
         {/* Scanner Frame */}
-        <div className="absolute inset-0 border-2 border-accent/8 rounded-lg">
+        <div className="absolute inset-0 border-2 border-accent/3 rounded-lg">
           {/* L-bracket corners */}
           {[
             { top: 0, left: 0 },

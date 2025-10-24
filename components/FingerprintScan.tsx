@@ -34,7 +34,7 @@ export default function FingerprintScan() {
   }, []);
 
   return (
-    <div className="absolute top-[10%] left-[5%] opacity-2 dark:opacity-4 pointer-events-none hidden lg:block z-0">
+    <div className="absolute top-[10%] left-[5%] opacity-1 dark:opacity-2 pointer-events-none hidden lg:block z-0">
       <motion.div
         className="relative w-24 h-28 xl:w-28 xl:h-32"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -42,7 +42,7 @@ export default function FingerprintScan() {
         transition={{ delay: 1, duration: 1.5 }}
       >
         {/* Scanner Pad Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/2 to-slate-800/2 backdrop-blur-sm rounded-lg border border-primary/0.5">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/2 to-slate-800/2 backdrop-blur-sm rounded-lg border border-primary/0.2">
           {/* Glass reflection effect */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/0.5 via-transparent to-transparent rounded-lg" />
         </div>
