@@ -126,7 +126,7 @@ export default function FingerprintScan() {
         )}
 
         {/* Precision Grid Overlay */}
-        <div className="absolute inset-0 opacity-2 dark:opacity-4">
+        <div className="absolute inset-0 opacity-5 dark:opacity-15">
           {/* Vertical lines */}
           {[...Array(9)].map((_, i) => (
             <div
