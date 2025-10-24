@@ -88,7 +88,7 @@ export default function CookiePolicyPage() {
                 <section>
                   <h2 className="text-2xl font-bold mb-4">5. Third-Party Cookies</h2>
                   <p className="text-foreground/80 leading-relaxed">
-                    Some cookies on our website are set by third-party services such as Google Analytics, social media platforms, and advertising networks. These cookies are subject to the respective third parties' privacy policies.
+                    Some cookies on our website are set by third-party services such as Google Analytics, social media platforms, and advertising networks. These cookies are subject to the respective third parties&apos; privacy policies.
                   </p>
                 </section>
 

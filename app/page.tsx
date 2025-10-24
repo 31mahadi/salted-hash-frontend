@@ -206,7 +206,7 @@ export default function HomePage() {
                   animation: "text-shimmer 3s linear infinite",
                 }}
               >
-                Don't Wait for a Breach — Strengthen Your Security Today
+                Don&apos;t Wait for a Breach — Strengthen Your Security Today
               </span>
               <motion.div
                 className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-purple/20 blur-2xl -z-10"
@@ -383,7 +383,7 @@ export default function HomePage() {
                   animation: "text-shimmer 3s linear infinite",
                 }}
               >
-                Don't Wait for a Breach — Strengthen Your Security Today
+                Don&apos;t Wait for a Breach — Strengthen Your Security Today
               </span>
               <motion.div
                 className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-purple/20 blur-2xl -z-10"
