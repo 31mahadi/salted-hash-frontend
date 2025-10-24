@@ -42,7 +42,7 @@ export default function FingerprintScan() {
         transition={{ delay: 1, duration: 1.5 }}
       >
         {/* Scanner Pad Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/2 to-slate-800/2 backdrop-blur-sm rounded-lg border border-primary/1">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/2 to-slate-800/2 backdrop-blur-sm rounded-lg border border-primary/0.5">
           {/* Glass reflection effect */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/0.5 via-transparent to-transparent rounded-lg" />
         </div>
