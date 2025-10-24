@@ -49,6 +49,18 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'light' || theme === 'dark') {
+                  document.documentElement.className = theme;
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
       </head>
       <body className={inter.className}>
         <ThemeProvider>

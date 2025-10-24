@@ -14,16 +14,22 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(() => {
-    // Initialize from localStorage or default to dark
-    if (typeof window !== 'undefined') {
-      return (localStorage.getItem('theme') as Theme) || 'dark';
+  const [theme, setTheme] = useState<Theme>('dark');
+  const [mounted, setMounted] = useState(false);
+
+  // Initialize theme from localStorage after hydration
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') as Theme;
+    if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
+      setTheme(savedTheme);
     }
-    return 'dark';
-  });
+    setMounted(true);
+  }, []);
 
   // Apply theme CSS variables to document
   useEffect(() => {
+    if (!mounted) return;
+    
     const cssVars = getThemeCSSVariables(theme);
     const root = document.documentElement;
     
@@ -38,7 +44,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     // Save to localStorage
     localStorage.setItem('theme', theme);
-  }, [theme]);
+  }, [theme, mounted]);
 
   const currentTheme = THEMES[theme];
 
