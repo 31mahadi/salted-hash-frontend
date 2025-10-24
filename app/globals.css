@@ -324,68 +324,24 @@ body::-webkit-scrollbar {
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Professional theme transition animations */
-  .theme-transition * {
+  /* Enterprise-level theme transitions - Apple/Google/Microsoft style */
+  * {
     transition: 
-      background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      fill 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      stroke 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      background-color 0.4s ease-out,
+      border-color 0.4s ease-out,
+      color 0.4s ease-out,
+      fill 0.4s ease-out,
+      stroke 0.4s ease-out,
+      box-shadow 0.4s ease-out,
+      opacity 0.4s ease-out;
   }
 
-  /* Sophisticated theme switching container */
-  .theme-transition {
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    transform-origin: center;
-  }
-
-  /* Enhanced theme transition for gradients and shadows */
-  .theme-transition .bg-gradient-hero,
-  .theme-transition .shadow-hero,
-  .theme-transition .bg-gradient-primary,
-  .theme-transition .shadow-button,
-  .theme-transition .bg-gradient-to-r,
-  .theme-transition .bg-gradient-to-br,
-  .theme-transition .bg-gradient-to-tl {
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  /* Staggered animations for child elements during theme switch */
-  .theme-transition .container > * {
-    transition-delay: calc(var(--stagger-delay, 0) * 0.1s);
-  }
-
-  .theme-transition .container > *:nth-child(1) { --stagger-delay: 1; }
-  .theme-transition .container > *:nth-child(2) { --stagger-delay: 2; }
-  .theme-transition .container > *:nth-child(3) { --stagger-delay: 3; }
-  .theme-transition .container > *:nth-child(4) { --stagger-delay: 4; }
-  .theme-transition .container > *:nth-child(5) { --stagger-delay: 5; }
-  .theme-transition .container > *:nth-child(6) { --stagger-delay: 6; }
-
-  /* Professional morphing effects */
-  .theme-transition .bg-card,
-  .theme-transition .bg-background,
-  .theme-transition .bg-muted {
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    transform-origin: center;
-  }
-
-  /* Smooth text color transitions */
-  .theme-transition h1,
-  .theme-transition h2,
-  .theme-transition h3,
-  .theme-transition h4,
-  .theme-transition h5,
-  .theme-transition h6,
-  .theme-transition p,
-  .theme-transition span,
-  .theme-transition div {
-    transition: color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Smooth theme switching for key elements */
+  .bg-gradient-hero,
+  .shadow-hero,
+  .bg-gradient-primary,
+  .shadow-button {
+    transition: all 0.4s ease-out;
   }
 
   /* Focus visible styles for accessibility */
