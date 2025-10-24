@@ -31,7 +31,7 @@ export default function TermsOfServicePage() {
                 <section>
                   <h2 className="text-2xl font-bold mb-4">1. Acceptance of Terms</h2>
                   <p className="text-foreground/80 leading-relaxed">
-                    By accessing or using CyberArmor&apos;s services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+                    By accessing our website and services, you agree to use them responsibly and in compliance with applicable laws. Unauthorized use of content or services is prohibited.
                   </p>
                 </section>
 
@@ -102,8 +102,8 @@ export default function TermsOfServicePage() {
                   <h2 className="text-2xl font-bold mb-4">10. Contact Information</h2>
                   <p className="text-foreground/80 leading-relaxed">
                     For questions about these Terms of Service, please contact us at{" "}
-                    <a href="mailto:legal@cyberarmor.com" className="text-primary hover:text-secondary">
-                      legal@cyberarmor.com
+                    <a href="mailto:contact@saltedhash.com" className="text-primary hover:text-secondary">
+                      contact@saltedhash.com
                     </a>
                   </p>
                 </section>

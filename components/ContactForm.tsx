@@ -16,8 +16,13 @@ export default function ContactForm() {
     email: "",
     company: "",
     phone: "",
-    message: "",
+    whatsapp: "",
+    telegram: "",
     service: "",
+    message: "",
+    communicationMethod: "",
+    preferredTime: "",
+    privacyPolicy: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
@@ -36,8 +41,13 @@ export default function ContactForm() {
           email: "",
           company: "",
           phone: "",
-          message: "",
+          whatsapp: "",
+          telegram: "",
           service: "",
+          message: "",
+          communicationMethod: "",
+          preferredTime: "",
+          privacyPolicy: false,
         });
         setTimeout(() => setSubmitStatus("idle"), 5000);
       } else {
@@ -53,9 +63,10 @@ export default function ContactForm() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
+    const { name, value, type } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     }));
   };
 
@@ -113,11 +124,12 @@ export default function ContactForm() {
 
         {/* Phone */}
         <div>
-          <Label htmlFor="phone">Phone Number</Label>
+          <Label htmlFor="phone">Phone Number *</Label>
           <Input
             id="phone"
             name="phone"
             type="tel"
+            required
             value={formData.phone}
             onChange={handleChange}
             placeholder="+1 (555) 123-4567"
@@ -125,22 +137,52 @@ export default function ContactForm() {
           />
         </div>
 
+        {/* WhatsApp */}
+        <div>
+          <Label htmlFor="whatsapp">WhatsApp (Optional)</Label>
+          <Input
+            id="whatsapp"
+            name="whatsapp"
+            type="tel"
+            value={formData.whatsapp}
+            onChange={handleChange}
+            placeholder="+1 (555) 123-4567"
+            className="mt-2"
+          />
+        </div>
+
+        {/* Telegram */}
+        <div>
+          <Label htmlFor="telegram">Telegram (Optional)</Label>
+          <Input
+            id="telegram"
+            name="telegram"
+            type="text"
+            value={formData.telegram}
+            onChange={handleChange}
+            placeholder="@username"
+            className="mt-2"
+          />
+        </div>
+
         {/* Service */}
         <div>
-          <Label htmlFor="service">Service of Interest</Label>
+          <Label htmlFor="service">Service Interested In *</Label>
           <select
             id="service"
             name="service"
+            required
             value={formData.service}
             onChange={handleChange}
             className="mt-2 flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
           >
             <option value="">Select a service</option>
-            <option value="cyber-risk-assessment">Cyber Risk Assessment</option>
-            <option value="penetration-testing">Penetration Testing</option>
-            <option value="cloud-security-audit">Cloud Security Audit</option>
-            <option value="compliance-governance">Compliance & Governance</option>
-            <option value="incident-response">Incident Response & Recovery</option>
+            <option value="security-assessment-protection">Security Assessment & Protection</option>
+            <option value="digital-investigation-cybercrime">Digital Investigation & Cybercrime</option>
+            <option value="forensic-services">Forensic Services</option>
+            <option value="managed-cybersecurity-services">Managed Cybersecurity Services</option>
+            <option value="governance-risk-compliance">Governance, Risk & Compliance</option>
+            <option value="training-awareness">Training & Awareness</option>
           </select>
         </div>
 
@@ -157,6 +199,63 @@ export default function ContactForm() {
             className="mt-2"
             rows={5}
           />
+        </div>
+
+        {/* Preferred Communication Method */}
+        <div>
+          <Label htmlFor="communicationMethod">Preferred Communication Method *</Label>
+          <select
+            id="communicationMethod"
+            name="communicationMethod"
+            required
+            value={formData.communicationMethod}
+            onChange={handleChange}
+            className="mt-2 flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+          >
+            <option value="">Select preferred method</option>
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+            <option value="whatsapp">WhatsApp</option>
+            <option value="telegram">Telegram</option>
+          </select>
+        </div>
+
+        {/* Preferred Time for Call */}
+        <div>
+          <Label htmlFor="preferredTime">Preferred Time for Call</Label>
+          <select
+            id="preferredTime"
+            name="preferredTime"
+            value={formData.preferredTime}
+            onChange={handleChange}
+            className="mt-2 flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+          >
+            <option value="">Select preferred time</option>
+            <option value="morning">Morning (9 AM - 12 PM)</option>
+            <option value="afternoon">Afternoon (12 PM - 5 PM)</option>
+            <option value="evening">Evening (5 PM - 8 PM)</option>
+            <option value="anytime">Anytime</option>
+          </select>
+        </div>
+
+        {/* Privacy Policy Checkbox */}
+        <div className="flex items-start gap-3">
+          <input
+            id="privacyPolicy"
+            name="privacyPolicy"
+            type="checkbox"
+            required
+            checked={formData.privacyPolicy}
+            onChange={handleChange}
+            className="mt-1 h-4 w-4 rounded border-border text-primary focus:ring-primary focus:ring-offset-2"
+          />
+          <Label htmlFor="privacyPolicy" className="text-sm text-foreground/70">
+            I agree to the{" "}
+            <a href="/privacy-policy" className="text-primary hover:underline">
+              Privacy Policy
+            </a>{" "}
+            and consent to the processing of my personal data. *
+          </Label>
         </div>
 
         {/* Submit Button */}

@@ -94,7 +94,7 @@ export default function HeroSectionV2() {
                 <Shield className="h-3 w-3 md:h-4 md:w-4 text-primary" />
               </motion.div>
               <span className="text-xs md:text-sm font-semibold bg-gradient-to-r from-primary via-purple to-accent bg-clip-text text-transparent">
-                Enterprise Cybersecurity Excellence
+                Schedule a Meeting | Sales: +1 (800) SALT-HASH
               </span>
               <Zap className="h-3 w-3 md:h-4 md:w-4 text-accent" />
             </motion.div>
@@ -103,9 +103,9 @@ export default function HeroSectionV2() {
           {/* Main Headline with Light Sweep */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black mb-6 md:mb-8 leading-[0.9] relative px-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-6 md:mb-8 leading-[1.1] relative px-4"
           >
-            <motion.span className="block">Fortify Your</motion.span>
+            <motion.span className="block">Secure Your Tomorrow with</motion.span>
             <motion.span
               className="block relative"
               style={{
@@ -125,7 +125,7 @@ export default function HeroSectionV2() {
                 ease: "linear",
               }}
             >
-              Digital Frontier
+              Comprehensive Cybersecurity Solutions
             </motion.span>
 
             {/* Animated Glow Behind Text */}
@@ -146,19 +146,17 @@ export default function HeroSectionV2() {
           {/* Subheadline with Blur Reveal */}
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl lg:text-2xl text-foreground/70 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-light px-4"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground/70 mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed font-light px-4"
           >
-            Enterprise-grade cybersecurity that{" "}
+            Protect your organization from cyber threats with our{" "}
             <motion.span
               className="text-primary font-medium"
               whileHover={{ scale: 1.05, display: "inline-block" }}
             >
-              protects what matters most
+              expert-driven security assessments
             </motion.span>
-            . Seamless defense architecture built on{" "}
-            <span className="text-purple font-medium">trust</span>,{" "}
-            <span className="text-accent font-medium">innovation</span>, and{" "}
-            <span className="text-primary font-medium">precision</span>.
+            , digital investigations, forensic services, and{" "}
+            <span className="text-purple font-medium">managed security solutions</span>.
           </motion.p>
 
           {/* CTA Buttons with Magnetic Effect */}
@@ -168,17 +166,17 @@ export default function HeroSectionV2() {
           >
             <Link href="/contact">
               <MagneticButton className="group bg-gradient-to-r from-primary to-purple hover:from-primary/90 hover:to-purple/90 text-black font-bold px-6 md:px-10 py-4 md:py-7 text-base md:text-lg border-0 w-full sm:w-auto">
-                Get a Free Assessment
+                Book a Consultation
                 <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-2" />
               </MagneticButton>
             </Link>
-            <Link href="/services">
+            <Link href="/contact">
               <MagneticButton
                 variant="outline"
                 className="border-2 border-primary hover:bg-primary/10 backdrop-blur-sm px-6 md:px-10 py-4 md:py-7 text-base md:text-lg font-semibold w-full sm:w-auto"
               >
                 <Lock className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                Explore Services
+                Contact Us
               </MagneticButton>
             </Link>
           </motion.div>
@@ -189,10 +187,10 @@ export default function HeroSectionV2() {
             className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto mb-8"
           >
             {[
-              { text: "SOC 2 Type II Certified" },
-              { text: "ISO 27001 Compliant" },
-              { text: "24/7 Incident Response" },
-              { text: "Zero-Trust Architecture" },
+              { text: "CEH, OSCP, CISSP Certified" },
+              { text: "Proven Track Record" },
+              { text: "24/7 Monitoring" },
+              { text: "Transparent Reporting" },
             ].map((item, index) => (
               <motion.div key={item.text} variants={itemVariants}>
                 <TrustBadge

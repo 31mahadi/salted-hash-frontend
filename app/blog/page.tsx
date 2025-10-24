@@ -43,33 +43,47 @@ export default async function BlogPage() {
                     animation: "text-shimmer 3s linear infinite",
                   }}
                 >
-                  Security Insights
+                  Blog / Insights
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/70">
-                Expert analysis, threat intelligence, and best practices to help you stay ahead 
-                in the ever-evolving cybersecurity landscape.
+                Stay updated with the latest in cybersecurity. From practical guides to industry trends, 
+                our blog shares knowledge to help businesses stay safe.
               </p>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Blog Grid */}
+      {/* Blog Categories */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogs.map((blog, index) => (
-              <BlogCard key={blog.id} blog={blog} index={index} />
-            ))}
+          <div className="space-y-16">
+            {categories.map((category, categoryIndex) => {
+              const categoryBlogs = blogs.filter(blog => blog.category === category);
+              return (
+                <AnimatedSection key={category} delay={categoryIndex * 0.1}>
+                  <div className="mb-8">
+                    <h2 className="text-3xl font-bold mb-4 text-center">{category}</h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-primary to-purple mx-auto rounded-full"></div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {categoryBlogs.map((blog, index) => (
+                      <BlogCard key={blog.id} blog={blog} index={index} />
+                    ))}
+                  </div>
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* CTA */}
       <CTASection
-        title="Want personalized security insights?"
-        description="Subscribe to our newsletter for exclusive content, webinars, and early access to security reports."
+        title="Contact Us for tailored insights"
+        description="Need specific cybersecurity guidance for your organization? Our experts are here to help."
         primaryButtonText="Contact Us"
         primaryButtonHref="/contact"
         variant="card"

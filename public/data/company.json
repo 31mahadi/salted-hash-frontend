@@ -1,29 +1,36 @@
 {
   "name": "SaltedHash",
-  "tagline": "Fortify Your Digital Frontier",
-  "mission": "Empower organizations to defend against evolving digital threats with precision, innovation, and trust.",
-  "vision": "A world where cybersecurity is seamless, strong, and smart — for every business, everywhere.",
-  "story": "Founded in 2018 by a team of former government cybersecurity specialists and ethical hackers, SaltedHash was born from a simple observation: traditional security approaches were failing to keep pace with modern threats. We set out to build a company that combines cutting-edge technology with human expertise to deliver security solutions that are both powerful and practical. Today, we protect hundreds of organizations worldwide, from startups to Fortune 500 companies, across industries including healthcare, finance, technology, and critical infrastructure.",
+  "tagline": "Secure Your Tomorrow with Comprehensive Cybersecurity Solutions",
+  "mission": "To empower businesses and individuals by providing world-class cybersecurity services that safeguard digital assets, ensure compliance, and build trust in the digital ecosystem.",
+  "vision": "To become a leading cybersecurity partner recognized globally for innovation, reliability, and excellence in protecting organizations against evolving cyber threats.",
+  "story": "Founded by cybersecurity professionals passionate about digital safety, our company was born to address the growing challenges organizations face in securing their critical information. With years of hands-on experience, we've helped businesses prevent breaches, investigate threats, and strengthen their defenses.",
+  "expertise": [
+    "CEH (Certified Ethical Hacker)",
+    "OSCP (Offensive Security Certified Professional)",
+    "CISSP (Certified Information Systems Security Professional)",
+    "CHFI (Computer Hacking Forensic Investigator)",
+    "ISO 27001 Lead Auditor"
+  ],
   "values": [
     {
-      "title": "Trust",
-      "description": "We earn trust through transparency, integrity, and consistent delivery of exceptional security outcomes.",
-      "icon": "handshake"
-    },
-    {
-      "title": "Confidentiality",
-      "description": "Your security posture and sensitive information are protected with the highest standards of confidentiality.",
-      "icon": "lock"
-    },
-    {
-      "title": "Excellence",
-      "description": "We maintain the highest technical standards through continuous learning and industry certifications.",
+      "title": "Certified Experts",
+      "description": "Certified cybersecurity experts (CEH, OSCP, CISSP, CHFI, ISO 27001 Lead Auditor)",
       "icon": "award"
     },
     {
-      "title": "Innovation",
-      "description": "We stay ahead of threats by innovating and adapting to the ever-changing cybersecurity landscape.",
-      "icon": "lightbulb"
+      "title": "Proven Track Record",
+      "description": "Proven track record with startups, banks, and enterprises",
+      "icon": "handshake"
+    },
+    {
+      "title": "24/7 Monitoring",
+      "description": "24/7 monitoring and managed security solutions",
+      "icon": "clock"
+    },
+    {
+      "title": "Transparent Reporting",
+      "description": "Transparent reporting with actionable insights",
+      "icon": "file-check"
     }
   ],
   "contact": {
@@ -34,35 +41,11 @@
   "team": [
     {
       "id": "1",
-      "name": "Dr. Alexandra Morgan",
-      "role": "Chief Executive Officer & Co-Founder",
-      "bio": "Former NSA cybersecurity analyst with 15+ years in threat intelligence and incident response.",
-      "image": "/images/team/alexandra.jpg",
-      "linkedin": "https://linkedin.com/in/alexandramorgan"
-    },
-    {
-      "id": "2",
-      "name": "James Chen",
-      "role": "Chief Technology Officer & Co-Founder",
-      "bio": "Ethical hacker and security researcher, holder of OSCP, OSCE, and multiple CVE discoveries.",
-      "image": "/images/team/james.jpg",
-      "linkedin": "https://linkedin.com/in/jameschen"
-    },
-    {
-      "id": "3",
-      "name": "Maria Rodriguez",
-      "role": "VP of Security Operations",
-      "bio": "20 years in enterprise security, specializing in SOC operations and incident response.",
-      "image": "/images/team/maria.jpg",
-      "linkedin": "https://linkedin.com/in/mariarodriguez"
-    },
-    {
-      "id": "4",
-      "name": "David Kim",
-      "role": "Director of Cloud Security",
-      "bio": "Cloud security architect with expertise in AWS, Azure, and GCP security frameworks.",
-      "image": "/images/team/david.jpg",
-      "linkedin": "https://linkedin.com/in/davidkim"
+      "name": "Shariar Rahman",
+      "role": "Founder & Cybersecurity Engineer",
+      "bio": "Cybersecurity professional with extensive experience in digital investigations, forensic services, and security assessments.",
+      "image": "/images/team/shariar.jpg",
+      "linkedin": "https://linkedin.com/in/shariarrahman"
     }
   ],
   "milestones": [

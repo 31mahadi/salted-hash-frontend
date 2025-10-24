@@ -50,23 +50,23 @@ export default function HomePage() {
   const features = [
     {
       icon: "award" as const,
-      title: "Trust",
-      description: "Industry-leading security experts with proven track record protecting Fortune 500 companies.",
+      title: "Certified Experts",
+      description: "Certified cybersecurity experts (CEH, OSCP, CISSP, CHFI, ISO 27001 Lead Auditor)",
     },
     {
-      icon: "lock" as const,
-      title: "Innovation",
-      description: "Cutting-edge tools and methodologies to stay ahead of emerging threats.",
-    },
-    {
-      icon: "award" as const,
-      title: "Compliance",
-      description: "SOC 2, ISO 27001, HIPAA, and PCI-DSS certified for complete peace of mind.",
+      icon: "shield" as const,
+      title: "Proven Track Record",
+      description: "Proven track record with startups, banks, and enterprises",
     },
     {
       icon: "clock" as const,
-      title: "24/7 Defense",
-      description: "Round-the-clock monitoring and incident response when you need it most.",
+      title: "24/7 Monitoring",
+      description: "24/7 monitoring and managed security solutions",
+    },
+    {
+      icon: "lock" as const,
+      title: "Transparent Reporting",
+      description: "Transparent reporting with actionable insights",
     },
   ];
 
@@ -102,7 +102,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
           <AnimatedSection className="mb-8 md:mb-16">
             <SectionTitle
-              title="Our Security Services"
+              title="Key Services"
               subtitle="Comprehensive cybersecurity solutions tailored to your business needs"
               centered
             />
@@ -120,7 +120,7 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-primary/10 to-purple/10 border border-primary/30 hover:border-primary/60 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,255,0.3)] group"
             >
               <span className="font-semibold bg-gradient-to-r from-primary to-purple bg-clip-text text-transparent">
-                View All Services
+                Explore All Services
               </span>
               <ArrowRight className="h-4 w-4 text-primary group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -206,7 +206,7 @@ export default function HomePage() {
                   animation: "text-shimmer 3s linear infinite",
                 }}
               >
-                Ready to strengthen your cyber defenses?
+                Don't Wait for a Breach — Strengthen Your Security Today
               </span>
               <motion.div
                 className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-purple/20 blur-2xl -z-10"
@@ -228,13 +228,13 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center px-4">
               <Link href="/contact">
                 <Button size="lg" className="group px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold w-full sm:w-auto">
-                  Get Started
+                  Book a Consultation Now
                   <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
-              <Link href="/services">
+              <Link href="/contact">
                 <Button size="lg" variant="outline" className="px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold w-full sm:w-auto">
-                  View Services
+                  Contact Us
                 </Button>
               </Link>
             </div>
@@ -297,7 +297,7 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-primary/10 to-purple/10 border border-primary/30 hover:border-primary/60 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,255,0.3)] group"
             >
               <span className="font-semibold bg-gradient-to-r from-primary to-purple bg-clip-text text-transparent">
-                View All Services
+                Explore All Services
               </span>
               <ArrowRight className="h-4 w-4 text-primary group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -383,7 +383,7 @@ export default function HomePage() {
                   animation: "text-shimmer 3s linear infinite",
                 }}
               >
-                Ready to strengthen your cyber defenses?
+                Don't Wait for a Breach — Strengthen Your Security Today
               </span>
               <motion.div
                 className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-purple/20 blur-2xl -z-10"
@@ -405,13 +405,13 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center px-4">
               <Link href="/contact">
                 <Button size="lg" className="group px-8 py-4 text-lg font-semibold w-full sm:w-auto">
-                  Get Started
+                  Book a Consultation Now
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
-              <Link href="/services">
+              <Link href="/contact">
                 <Button size="lg" variant="outline" className="px-8 py-4 text-lg font-semibold w-full sm:w-auto">
-                  View Services
+                  Contact Us
                 </Button>
               </Link>
             </div>

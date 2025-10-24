@@ -13,22 +13,21 @@ import {
 } from "@/lib/constants";
 
 const footerLinks = {
-  services: [
-    { label: "Cyber Risk Assessment", href: "/services/cyber-risk-assessment" },
-    { label: "Penetration Testing", href: "/services/penetration-testing" },
-    { label: "Cloud Security Audit", href: "/services/cloud-security-audit" },
-    { label: "Compliance & Governance", href: "/services/compliance-governance" },
+  quickLinks: [
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "About Us", href: "/about" },
+    { label: "Blog / Insights", href: "/blog" },
+    { label: "Contact Us", href: "/contact" },
   ],
   company: [
-    { label: "About Us", href: "/about" },
-    { label: "Blog", href: "/blog" },
-    { label: "Contact", href: "/contact" },
+    { label: "Company Profile", href: "/about" },
     { label: "Careers", href: "#" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Service", href: "/terms-of-service" },
-    { label: "Security", href: "#" },
+    { label: "Cookie Policy", href: "/cookie-policy" },
   ],
 };
 
@@ -65,7 +64,7 @@ export default function Footer() {
               <LogoFooter />
             </div>
             <p className="text-foreground/70 mb-6 max-w-sm leading-relaxed mx-auto md:mx-0">
-              Fortify Your Digital Frontier. Empowering organizations with cutting-edge cybersecurity solutions.
+              Secure Your Tomorrow with Comprehensive Cybersecurity Solutions. Empowering organizations with cutting-edge cybersecurity solutions.
             </p>
             <div className="flex gap-4 justify-center md:justify-start">
               <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/70 hover:text-primary hover:bg-primary/20 transition-all">
@@ -80,11 +79,11 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-foreground">Services</h3>
+            <h3 className="font-semibold mb-4 text-foreground">Quick Links</h3>
             <ul className="space-y-2">
-              {footerLinks.services.map((link) => (
+              {footerLinks.quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-foreground/70 hover:text-primary transition-colors text-sm">
                     {link.label}

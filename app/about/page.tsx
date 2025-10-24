@@ -88,12 +88,40 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Expertise & Certifications */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mb-12">
             <SectionTitle
-              title="Our Values"
+              title="Expertise & Certifications"
+              subtitle="Certified cybersecurity experts with industry-leading credentials"
+              centered
+            />
+          </AnimatedSection>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {company.expertise.map((cert, index) => (
+                <AnimatedSection key={cert} delay={index * 0.1}>
+                  <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 text-center hover:border-primary/30 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary/20 to-purple/20 flex items-center justify-center mx-auto mb-4">
+                      <Award className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="font-semibold text-sm">{cert}</h3>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-20 bg-card">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="mb-12">
+            <SectionTitle
+              title="Why Choose Us"
               subtitle="The principles that guide everything we do"
               centered
             />
@@ -185,6 +213,8 @@ export default async function AboutPage() {
       <CTASection
         title="Ready to work with us?"
         description="Join hundreds of organizations that trust SaltedHash to protect their digital assets."
+        primaryButtonText="Book a Consultation"
+        primaryButtonHref="/contact"
         variant="background"
       />
     </>

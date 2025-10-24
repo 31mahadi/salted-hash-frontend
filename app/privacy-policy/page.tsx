@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
                 <section>
                   <h2 className="text-2xl font-bold mb-4">1. Introduction</h2>
                   <p className="text-foreground/80 leading-relaxed">
-                    CyberArmor (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+                    SaltedHash (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your privacy and is committed to protecting your personal information. Data collected is used solely to provide and improve services. We do not sell or share your data without consent.
                   </p>
                 </section>
 
@@ -96,8 +96,8 @@ export default function PrivacyPolicyPage() {
                   <h2 className="text-2xl font-bold mb-4">7. Contact Us</h2>
                   <p className="text-foreground/80 leading-relaxed">
                     If you have questions about this Privacy Policy, please contact us at{" "}
-                    <a href="mailto:privacy@cyberarmor.com" className="text-primary hover:text-secondary">
-                      privacy@cyberarmor.com
+                    <a href="mailto:contact@saltedhash.com" className="text-primary hover:text-secondary">
+                      contact@saltedhash.com
                     </a>
                   </p>
                 </section>

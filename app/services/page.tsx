@@ -53,12 +53,74 @@ export default async function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services Categories */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="space-y-16">
             {services.map((service, index) => (
-              <ServiceCard key={service.id} service={service} index={index} />
+              <AnimatedSection key={service.id} className="mb-16">
+                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 md:p-12">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-primary/20 to-purple/20 flex items-center justify-center">
+                      <span className="text-2xl font-bold bg-gradient-to-r from-primary to-purple bg-clip-text text-transparent">
+                        {service.id}
+                      </span>
+                    </div>
+                    <div>
+                      <h2 className="text-2xl md:text-3xl font-bold mb-2">{service.title}</h2>
+                      <p className="text-foreground/70">{service.shortDescription}</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
+                    {service.longDescription}
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                      <h3 className="text-lg font-semibold mb-4 text-primary">Services Include:</h3>
+                      <ul className="space-y-3">
+                        {service.services.map((item, idx) => (
+                          <li key={idx} className="flex items-start gap-3">
+                            <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                            <div>
+                              <span className="font-medium">{item.name}</span>
+                              <p className="text-sm text-foreground/70 mt-1">{item.description}</p>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-lg font-semibold mb-4 text-purple">Key Benefits:</h3>
+                      <ul className="space-y-3">
+                        {service.benefits.map((benefit, idx) => (
+                          <li key={idx} className="flex items-start gap-3">
+                            <div className="w-2 h-2 rounded-full bg-purple mt-2 flex-shrink-0"></div>
+                            <span className="text-foreground/80">{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a 
+                      href="/contact" 
+                      className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-primary to-purple text-white font-semibold rounded-lg hover:from-primary/90 hover:to-purple/90 transition-all duration-300"
+                    >
+                      Book Consultation
+                    </a>
+                    <a 
+                      href="/contact" 
+                      className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary/10 transition-all duration-300"
+                    >
+                      Contact Us
+                    </a>
+                  </div>
+                </div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
