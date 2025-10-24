@@ -111,14 +111,17 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               </ul>
             </AnimatedSection>
 
-            {/* Use Cases */}
+            {/* Services */}
             <AnimatedSection delay={0.2}>
-              <h2 className="text-3xl font-bold mb-8">Common Use Cases</h2>
+              <h2 className="text-3xl font-bold mb-8">Services Include</h2>
               <ul className="space-y-4">
-                {service.useCases.map((useCase, index) => (
+                {service.services.map((serviceItem, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-secondary shrink-0 mt-0.5" />
-                    <span className="text-foreground/80">{useCase}</span>
+                    <div>
+                      <span className="text-foreground/90 font-medium">{serviceItem.name}</span>
+                      <p className="text-foreground/70 text-sm mt-1">{serviceItem.description}</p>
+                    </div>
                   </li>
                 ))}
               </ul>
