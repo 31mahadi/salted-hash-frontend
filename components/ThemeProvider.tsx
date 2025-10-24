@@ -6,9 +6,9 @@ import { Theme, THEMES, getThemeCSSVariables } from "@/lib/theme-config";
 interface ThemeContextType {
   theme: Theme;
   setTheme: (theme: Theme) => void;
-  colors: typeof THEMES.light.colors;
-  gradients: typeof THEMES.light.gradients;
-  shadows: typeof THEMES.light.shadows;
+  colors: typeof THEMES.light.colors | typeof THEMES.dark.colors;
+  gradients: typeof THEMES.light.gradients | typeof THEMES.dark.gradients;
+  shadows: typeof THEMES.light.shadows | typeof THEMES.dark.shadows;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
