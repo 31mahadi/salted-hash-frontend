@@ -81,7 +81,7 @@ export default function RetinalScan() {
                   stroke="currentColor"
                   strokeWidth="0.5"
                   className="text-accent"
-                  opacity={0.5 - i * 0.06}
+                  opacity={0.2 - i * 0.02}
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: scanning ? 1 : 0.4 }}
                   transition={{ duration: 0.5, delay: i * 0.05 }}
@@ -290,7 +290,7 @@ export default function RetinalScan() {
         )}
 
         {/* Precision Grid */}
-        <div className="absolute inset-0 opacity-12">
+        <div className="absolute inset-0 opacity-5">
           {[...Array(8)].map((_, i) => (
             <div
               key={`grid-h-${i}`}
