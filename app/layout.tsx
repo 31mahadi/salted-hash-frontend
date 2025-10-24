@@ -62,15 +62,13 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} theme-transition`}>
+      <body className={inter.className}>
         <ThemeProvider>
-          <div className="min-h-screen transition-all duration-300 ease-in-out">
-            <Navbar />
-            <main>
-              {children}
-            </main>
-            <Footer />
-          </div>
+          <Navbar />
+          <main>
+            {children}
+          </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Theme, THEMES, getThemeCSSVariables } from "@/lib/theme-config";
 
 interface ThemeContextType {
@@ -16,6 +17,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('dark');
   const [mounted, setMounted] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Initialize theme from localStorage after hydration
   useEffect(() => {
@@ -33,7 +35,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const cssVars = getThemeCSSVariables(theme);
     const root = document.documentElement;
     
-    // Add transition class for smooth theme switching
+    // Start transition
+    setIsTransitioning(true);
     root.classList.add('theme-transition');
     
     // Apply CSS variables
@@ -48,10 +51,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     // Save to localStorage
     localStorage.setItem('theme', theme);
 
-    // Remove transition class after animation completes
+    // Complete transition
     const timeout = setTimeout(() => {
       root.classList.remove('theme-transition');
-    }, 300);
+      setIsTransitioning(false);
+    }, 600);
 
     return () => clearTimeout(timeout);
   }, [theme, mounted]);
@@ -68,7 +72,42 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <ThemeContext.Provider value={value}>
-      {children}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={theme}
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1, 
+            y: 0,
+            transition: {
+              duration: 0.6,
+              ease: [0.16, 1, 0.3, 1],
+              staggerChildren: 0.1
+            }
+          }}
+          exit={{ 
+            opacity: 0, 
+            scale: 1.05, 
+            y: -20,
+            transition: {
+              duration: 0.4,
+              ease: [0.16, 1, 0.3, 1]
+            }
+          }}
+          className="min-h-screen"
+        >
+          {/* Theme transition overlay */}
+          <motion.div
+            className="fixed inset-0 bg-gradient-to-br from-primary/5 via-purple/5 to-accent/5 pointer-events-none z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isTransitioning ? 1 : 0 }}
+            transition={{ duration: 0.3 }}
+          />
+          
+          {children}
+        </motion.div>
+      </AnimatePresence>
     </ThemeContext.Provider>
   );
 }
