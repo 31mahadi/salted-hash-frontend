@@ -43,15 +43,15 @@ export default function CyberBackground() {
       {/* Pulse Waves */}
       <PulseWave />
 
-      {/* Grid Pattern */}
+      {/* Grid Pattern - Theme Aware */}
       <motion.div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-10 dark:opacity-20"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-            linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px)
+            linear-gradient(var(--color-primary-DEFAULT) 1px, transparent 1px),
+            linear-gradient(90deg, var(--color-primary-DEFAULT) 1px, transparent 1px),
+            linear-gradient(var(--color-secondary-DEFAULT) 1px, transparent 1px),
+            linear-gradient(90deg, var(--color-secondary-DEFAULT) 1px, transparent 1px)
           `,
           backgroundSize: "100px 100px, 100px 100px, 20px 20px, 20px 20px",
         }}
@@ -68,21 +68,21 @@ export default function CyberBackground() {
         }}
       />
 
-      {/* Floating Particles */}
+      {/* Floating Particles - More Subtle */}
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute rounded-full bg-primary"
+          className="absolute rounded-full bg-primary/30"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
             width: particle.size,
             height: particle.size,
-            boxShadow: `0 0 ${particle.size * 4}px rgba(0, 255, 255, 0.6)`,
+            boxShadow: `0 0 ${particle.size * 2}px var(--color-primary-DEFAULT)`,
           }}
           animate={{
-            y: [0, -30, 0],
-            opacity: [0.2, 0.8, 0.2],
+            y: [0, -20, 0],
+            opacity: [0.1, 0.3, 0.1],
           }}
           transition={{
             duration: particle.duration,
@@ -93,50 +93,50 @@ export default function CyberBackground() {
         />
       ))}
 
-      {/* Scan Lines */}
+      {/* Scan Lines - More Subtle */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"
-        style={{ height: "100px" }}
+        className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/2 to-transparent"
+        style={{ height: "60px" }}
         animate={{
           y: ["-100%", "100vh"],
         }}
         transition={{
-          duration: 8,
+          duration: 12,
           repeat: Infinity,
           ease: "linear",
         }}
       />
 
-      {/* Corner Accents */}
-      <div className="absolute top-0 left-0 w-40 h-40 border-t-2 border-l-2 border-primary opacity-30" />
-      <div className="absolute top-0 right-0 w-40 h-40 border-t-2 border-r-2 border-secondary opacity-30" />
-      <div className="absolute bottom-0 left-0 w-40 h-40 border-b-2 border-l-2 border-secondary opacity-30" />
-      <div className="absolute bottom-0 right-0 w-40 h-40 border-b-2 border-r-2 border-primary opacity-30" />
+      {/* Corner Accents - More Subtle */}
+      <div className="absolute top-0 left-0 w-40 h-40 border-t-2 border-l-2 border-primary opacity-10" />
+      <div className="absolute top-0 right-0 w-40 h-40 border-t-2 border-r-2 border-secondary opacity-10" />
+      <div className="absolute bottom-0 left-0 w-40 h-40 border-b-2 border-l-2 border-secondary opacity-10" />
+      <div className="absolute bottom-0 right-0 w-40 h-40 border-b-2 border-r-2 border-primary opacity-10" />
 
-      {/* Glowing Orbs */}
+      {/* Glowing Orbs - More Subtle */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/10 blur-3xl"
+        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl"
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-purple/10 blur-3xl"
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.3, 0.5, 0.3],
+          scale: [1, 1.1, 1],
+          opacity: [0.2, 0.3, 0.2],
         }}
         transition={{
           duration: 10,
           repeat: Infinity,
           ease: "easeInOut",
-          delay: 1,
+        }}
+      />
+      <motion.div
+        className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-purple/5 blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.2, 0.3, 0.2],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2,
         }}
       />
     </div>

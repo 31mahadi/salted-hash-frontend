@@ -54,11 +54,11 @@ export default function Navbar() {
               );
             })}
             <ThemeToggle />
-            <Link href="/login">
+            {/* <Link href="/login">
               <Button variant="outline" size="sm">
                 Login
               </Button>
-            </Link>
+            </Link> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -103,11 +103,11 @@ export default function Navbar() {
               })}
               <div className="flex gap-2">
                 <ThemeToggle />
-                <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+                {/* <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
                   <Button variant="outline" className="flex-1">
                     Login
                   </Button>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </motion.div>
